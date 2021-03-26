@@ -1,0 +1,69 @@
+.layer{
+    font-weight: lighter;
+    //--background: #808080 ; // Replace this with color of your choice  
+    //--background: url('/assets/back_.jpg') ; // 0 0/100% 100% no-repeat;
+    background-image: url('/assets/docTools.jpg');
+    background-repeat: no-repeat;
+    padding: 400px 100px;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+    height: 100%;
+}
+.layer:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0; 
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+ }
+#logo_inicio{
+    margin-top: 4rem;
+    min-width: 280px;
+    max-width: 500px;
+}
+#logo_inicio ion-img{
+    padding-bottom: 10px;
+    width: 80%;
+    margin: auto;
+}
+.slogan{
+    color: #ffffff;
+    font-size: 28px;
+}
+.slogan-underline{
+    background-color: #ed6e00;
+    width: 90%;
+}
+
+div#homeButtons{
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 3rem;
+    max-width: 500px;
+}
+#container p {
+    font-size: 18px;
+    line-height: 22px;
+    color: #ffffff;
+    margin: 0;
+}
+.homeButtons{
+    font-size:20px;
+    letter-spacing: 1.5pt;
+    margin-bottom: 1rem;
+    z-index:100;
+    // box-shadow: 3px 3px 5px #ffffff;
+}
+.btnTxt{
+    color:#ffffff;
+}

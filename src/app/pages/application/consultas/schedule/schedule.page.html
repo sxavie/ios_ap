@@ -1,0 +1,95 @@
+
+
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/consultas"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons> 
+        
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+    
+    <div id="cardContent">
+
+      <h2> CONSULTAS </h2>
+     
+      <div class="title">
+        <ion-text class="titulo"> Agendar </ion-text>
+      </div>
+
+      <!-- content -->
+
+      
+      <app-calendar 
+        (timeSelected_emmiter)="getSelectedTime($event)" >
+      </app-calendar>
+
+      <ion-item class="timePick">
+        <ion-label class="title_2">Horarios</ion-label>
+        <ion-datetime
+          [placeholder]="timeNow"  
+          [(ngModel)]="timeSelected" 
+          displayFormat="HH:mm A" 
+          done-text="Seleccionar"></ion-datetime>
+      </ion-item>
+ 
+      <!-- <ion-text > Horarios Disponibles </ion-text>
+
+      <ion-list>
+        <ion-item>
+          <ion-select [(ngModel)]="time">
+            <ion-select-option  *ngFor="let hour of hours; let i = index " [value]="i"> {{ i + 1 + ':00' }} </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list> -->
+  
+
+      
+
+      <ion-button  (click)="schedule()" class="reqBtn" 
+        color="secondaryTUx"
+        expand="block"
+        shape="round" > 
+        <ion-text class="btnTxt"> Siguiente </ion-text> 
+      </ion-button>   
+      
+    
+      <!-- content -->
+      
+    </div> 
+    
+  </div>
+</ion-content> 
+
+
+
+
+
+
+

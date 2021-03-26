@@ -1,0 +1,94 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+
+
+          <ion-buttons slot="start">
+            <ion-button
+              (click)="backProfile()"
+              class="navIconBtn">
+              <ion-icon 
+                name="chevron-back-outline"
+                slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          
+          <div id="logo">
+            <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+          </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+
+    <div id="avatar">
+      <ion-avatar>
+          <img [src]="userservice.image">
+      </ion-avatar>
+    </div>
+
+    <ion-text *ngIf="!isAdding" id="editSpan" 
+    color="primaryTUx" 
+    (click)="adding()"> Editar </ion-text>
+
+    <ion-text *ngIf="isAdding" id="editSpan" 
+    color="primaryTUx"
+    (click)="genAllergiesJSON()"> Guardar </ion-text>
+    
+    <div id="cardContent">
+      
+      <div class="title">
+        <ion-text class="titulo"> Alergias </ion-text>
+      </div>
+
+      <ion-list class="list">
+
+
+        <ion-item *ngFor="let all of alergias ">
+          <ion-text> 
+            <span class="dot"> ● </span> {{ all }} 
+          </ion-text>  
+          
+          <ion-buttons *ngIf="isAdding" slot="end">
+            <ion-button (click)="removeAllergies(all)">
+              <ion-icon name="remove-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+
+        </ion-item>
+
+        <ion-item *ngIf="isAdding" class="add-item">
+           
+            <span class="dot"> ● </span> 
+          
+            <ion-input [(ngModel)]="strAlergia" placeholder="Insertar texto"> </ion-input>
+            
+            <ion-buttons slot="end">
+              <ion-button (click)="addAllergies()">
+                <ion-icon  name="add"  slot="icon-only" ></ion-icon>
+              </ion-button>
+            </ion-buttons>
+
+        </ion-item>
+
+      </ion-list>
+      
+    </div>
+    
+  </div>
+</ion-content> 

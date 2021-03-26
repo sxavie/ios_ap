@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Inicio",
+    "icon": "home-outline",
+    "redirectTo": "/app/home"
+  },
+  {
+    "title": "Perfil",
+    "icon": "person-outline",
+    "redirectTo": "/app/perfil"
+  },{
+    "title": "Ayuda",
+    "icon": "help-outline",
+    "redirectTo": "/app/help"
+  },{
+    "title": "Configuración",
+    "icon": "settings-outline",
+    "redirectTo": "/app"
+  }
+] 

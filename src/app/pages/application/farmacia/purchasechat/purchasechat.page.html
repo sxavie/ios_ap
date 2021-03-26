@@ -1,0 +1,105 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none"  
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/consultas"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+    
+    <div id="cardContent">
+
+      <h2> SEGUIMIENTO DE COMPRA </h2>
+     
+      <!-- content -->
+      <div class="switch">
+
+        <span class="switcher switcher-1">
+          <input type="checkbox" id="switcher-1" [(ngModel)]="isVirtual"> 
+          <label for="switcher-1"></label>
+       </span> 
+
+       <ion-item lines="none">
+        <!-- <ion-chip slot="start"> -->
+          <ion-avatar slot="start">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjYzVkYmZmIiBkPSJNMCAwaDUxMnY1MTJIMHoiLz48cGF0aCBkPSJNMjU2IDMwNGM2MS42IDAgMTEyLTUwLjQgMTEyLTExMlMzMTcuNiA4MCAyNTYgODBzLTExMiA1MC40LTExMiAxMTIgNTAuNCAxMTIgMTEyIDExMnptMCA0MGMtNzQuMiAwLTIyNCAzNy44LTIyNCAxMTJ2NTZoNDQ4di01NmMwLTc0LjItMTQ5LjgtMTEyLTIyNC0xMTJ6IiBmaWxsPSIjODJhZWZmIi8+PC9zdmc+" />
+          </ion-avatar>
+          <ion-label> Armado Manuel Meza Diaz </ion-label>
+        <!-- </ion-chip> -->
+        <ion-icon slot="end" name="call-outline" (click)="videoCall()" ></ion-icon>
+       </ion-item>
+
+       <div class="divider"> <hr> </div>
+
+       <div class="chat"> 
+
+        <div *ngFor="let message of messages || async" [class]="message.source">
+          <ion-text> {{ message.msg }} </ion-text>
+        </div>
+
+
+
+       </div>
+
+       <div class="divider"> <hr> </div>
+
+       <div class="chatbox">
+        <ion-item lines="none">
+          <ion-textarea [(ngModel)]="msg"></ion-textarea>
+          <ion-icon slot="end" name="send-outline" (click)="sendMessage()"></ion-icon>
+        </ion-item>
+       </div>
+
+      </div>
+
+
+
+
+
+
+      <!-- content -->
+      
+    </div>
+    
+  </div>
+</ion-content> 
+
+
+<!-- 
+  <ion-list>
+
+    <ion-item>
+      <ion-text slot="start"> Peers Id </ion-text>
+      <ion-input slot="end" [(ngModel)]="peerToConnect">  </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="peerConnect()" expand="full"> Connect </ion-button>
+ -->
+

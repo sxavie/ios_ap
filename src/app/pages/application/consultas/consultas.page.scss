@@ -1,0 +1,71 @@
+
+#cardContent{
+    height: calc(100vh - 120px);
+    justify-content: start !important;
+    padding: 15px 0px !important;
+}
+
+#cardContent .list{
+    padding: 10px;
+    font-size: 16px;
+}
+#cardContent .list ion-item.fstItem{
+    padding: 0px;
+    margin: 0px;
+}
+#cardContent .list ion-text{
+    font-size: 18px;
+    letter-spacing: -1px;
+    color: #a6a6a6;
+    padding-left: 15px;
+}
+
+//Iconos
+.icon-band{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background: url('/assets/consultas/BandAid.svg') center no-repeat;
+    background-size: contain;}
+.icon-scope{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background: url('/assets/consultas/Stetoscope.svg') center no-repeat;
+    background-size: contain;}
+.icon-jeringa{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background: url('/assets/consultas/Jeringa.svg') center no-repeat;
+    background-size: contain;}
+.icon-needle{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background: url('/assets/consultas/Needle.svg') center no-repeat;
+    background-size: contain;}
+.icon-clock{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background: url('/assets/consultas/Clock.svg') center no-repeat;
+    // background-size: contain;}
+}
+
+.item-consultReason{
+
+    padding: 0px 5px;
+    ion-img{
+        margin: 5px;
+        width: 50px;
+        height: 50px; 
+        object-fit: scale-down;
+        padding: 5px;
+    }
+}

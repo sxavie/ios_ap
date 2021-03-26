@@ -1,0 +1,116 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/consultas"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+    
+    <div id="cardContent" class="fit-card-content">
+
+      <h2 [ngSwitch]="orderservice.newConsultData?.consultReason">
+        <span *ngSwitchCase="1"> Consulta general </span>
+        <span *ngSwitchCase="2"> Aplicación de medicamento </span>
+        <span *ngSwitchCase="3"> Retiro de puntos </span>
+        <span *ngSwitchCase="4"> Heridas / curaciones </span>
+        <span *ngSwitchCase="5"> Resacas </span>
+        <span *ngSwitchDefault> CONSULTAS </span>
+      </h2>
+     
+      <div class="title">
+        <ion-text class="titulo"> Selección de Usuario </ion-text>
+      </div>
+
+      <!-- content -->
+
+      <ion-list class="list">
+
+        <ion-radio-group [(ngModel)]="userSelectedID" value="userData._id">
+
+       
+
+        <ion-item>
+          <ion-avatar slot="start">
+            <img [src]="imgAvatar">
+          </ion-avatar>
+          <ion-label> 
+            <h3> {{userData.name}} </h3>  
+            <p> Yo   </p>
+          </ion-label>
+          <ion-radio mode="md" slot="end" [value]="userData._id"></ion-radio>
+        </ion-item>
+
+
+        <ion-item *ngFor=" let member of userData.family || async " >
+          <ion-avatar slot="start">
+            <img [src]="member.filename | image:'user'">
+          </ion-avatar>
+          <ion-label> 
+            <h3> {{member.name}} </h3>  
+            <p> {{member.relationship}}   </p>
+          </ion-label>
+          <ion-radio mode="md" [value]="member._id" slot="end"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-avatar slot="start">
+            <img src="/assets/guest-filename.png">
+          </ion-avatar>
+          <ion-label> 
+            <h3> Invitado </h3>  
+            <p> </p>
+          </ion-label>
+          <ion-radio mode="md" slot="end" [value]="'isGuest'"></ion-radio>
+        </ion-item>
+       
+
+       
+      </ion-radio-group>
+        
+
+      </ion-list>
+
+
+       <!-- Boton reutilizado css Global -->
+       <div class="tiduxButton-container">
+        <div class="tx-button blue" (click)="request()">
+          <ion-label> {{ txtType }} </ion-label>
+        </div>
+      </div>
+    
+      <!-- content -->
+      
+    </div> 
+    
+  </div>
+</ion-content> 
+
+
+

@@ -1,0 +1,133 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+      <ion-item lines="none" color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/app/labs/labpaymethod" text="" class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+        <ion-buttons slot="end">
+          <ion-button (click)="goHome()">
+            <ion-icon class="navIconBtn" slot="icon-only" name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </div> <!-- navContainer -->
+
+
+    <div id="cardContent">
+
+      <div>
+        <h2> RESUMEN DE COMPRA </h2>
+      </div>
+
+      <div class="main_blocker">
+
+        <div class="blck address" *ngIf="checkout_address as address">
+
+          <div class="header">
+            <ion-text> DIRECCIÓN DE VISITA </ion-text>
+          </div>
+
+          <div class="body">
+            <ion-label> {{address.name}} </ion-label>
+            <ion-label> {{address.street}}, No. {{address.number}} </ion-label>
+            <ion-label> Col. {{address.neighborhood}}, </ion-label>
+            <ion-label> {{address.city}}, {{address.state}}, {{address.country}} </ion-label>
+            <ion-label> CP. {{address.zipcode}} </ion-label>
+          </div>
+
+          <hr>
+        </div>
+
+        <div class="blck payment" *ngIf="checkout_payment as card">
+
+          <div class="header">
+            <ion-text>METODO DE PAGO</ion-text>
+          </div>
+          <div class="body">
+            <img [class]="card.brand" src="">
+            <ion-text> **** **** **** {{ card.last4}} </ion-text>
+          </div>
+
+          <hr>
+        </div>
+
+        <ng-template [ngIf]="checkout_services || async">
+          <div class="blck services">
+
+            <div class="header">
+              <ion-text>SERVICIOS</ion-text>
+            </div>
+
+            <div class="body">
+              <div class="service" *ngFor="let service of checkout_services.servicesList; let i = index">
+                <ion-text> {{ service?.name }} </ion-text>
+                <div class="price">
+                  <ion-text> $ </ion-text>
+                  <ion-text> {{ service.price  }} </ion-text>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </ng-template>
+
+      </div>
+
+      <hr class="priceDivider">
+
+      <!-- Totales -->
+      <div class="totalsContainer">
+
+        <ion-item class="ticket-item">
+          <ion-icon class="icon-ticket" name="ticket-outline"></ion-icon>
+          <ion-input (ionBlur)="validarCupon()" [ngClass]="cuponValidationClass" class="cuponTxt"
+            [(ngModel)]="cuponCode" placeholder="Cupón" type="text"></ion-input>
+        </ion-item>
+
+        <div>
+          <ion-text> servicios ({{ checkout_services?.ServicesNumber }}) </ion-text>
+          <ion-text style="float:right"> $ {{ checkout_services.subtotal }} </ion-text>
+        </div>
+        <div>
+          <ion-text> Tarifa de distancia: </ion-text>
+          <ion-text style="float:right"> $ {{ checkout_services.totalKm }} </ion-text>
+        </div>
+
+
+        <div class="totals">
+          <ion-text style="color: #00b3bc;"> Total </ion-text>
+          <ion-text style="float:right; color: black;"> $ {{ checkout_services.totalPrice }} </ion-text>
+        </div>
+        <ion-text style="float:right; font-weight: bold; font-size: 10px;"> (Se hara el cobro al finalizar el servicio)
+        </ion-text>
+
+
+        <div class="tiduxButton-container">
+          <div class="tx-button blue" (click)="requestServices()">
+            <ion-label> Pedir Servicio </ion-label>
+          </div>
+        </div>
+
+        <div class="tiduxButton-container">
+          <div class="tx-button calcelar_button" (click)="cancelarALV()">
+            <ion-label> Cancelar </ion-label>
+          </div>
+        </div>
+
+      </div>
+
+    </div> <!-- cardContent -->
+
+
+
+  </div> <!-- main -->
+
+</ion-content>

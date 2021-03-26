@@ -1,0 +1,44 @@
+// contenido:
+
+#avatar{
+    width: 50%;
+    height: 150px;
+    width: 150px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: auto;
+    position: relative;
+    margin-top: 10px;
+    z-index: 1;
+}
+#avatar ion-avatar{
+    border:3px solid #00b3bc;
+    width: 100%;
+    height: 100%;
+}
+#cardContent{
+    padding:100px 20px 20px 20px ;
+    margin-bottom: 20px;
+    transform: translateY(-75px);
+}
+#cardContent .list{
+    margin-top: 25px;
+}
+
+
+#editSpan{
+    position: relative;
+    z-index: 2;
+    float: right;
+    margin-right: 35px;
+    font-size: 35px;
+}
+
+.popover_class .popover-content {
+        //width: 80% !important; - this wont work or the bottom one.
+        --width: 500px !important;
+        width: 500px !important;
+}
+

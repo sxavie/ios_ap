@@ -1,0 +1,59 @@
+// contenido:
+#avatar{
+    width: 50%;
+    height: 150px;
+    width: 150px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: auto;
+    margin-top: 10px;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+#avatar ion-avatar{
+    border:3px solid #00b3bc;
+    width: 100%;
+    height: 100%;
+}
+#cardContent{
+    padding:100px 20px 50px 20px ;
+    transform: translateY(75px);
+    margin-bottom: 85px;
+}
+
+#cardContent ion-list{
+    padding: 5px 0;
+}
+#cardContent .list{
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+
+//Editar
+
+#editSpan{
+    position: relative;
+    z-index: 2;
+    float: right;
+    margin-right: 30px;
+}
+
+.editDato{
+    height: 45px;
+    text-align: right;
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+.iconEdit{
+    display: flex;
+    align-items: center;
+}
+.disabledText{
+	opacity: 0.4;
+}

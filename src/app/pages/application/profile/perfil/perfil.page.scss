@@ -1,0 +1,107 @@
+// contenido:
+#avatar{
+    width: 50%; 
+    height: 150px;
+    width: 150px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: auto;
+    margin-top: 10px;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+#avatar ion-avatar{
+    border:3px solid #00b3bc;
+    width: 100%;
+    height: 100%;
+}
+#cardContent{
+    padding:100px 20px 50px 20px ;
+    transform: translateY(75px);
+    margin-bottom: 85px;
+}
+
+//titulo
+.title{
+    margin-left: 20px;;
+}
+.titulo{
+    font-size: 25px;
+    color: #014c68;
+}
+.underline{
+    width: 150px;
+}
+.underline hr{
+    background-color: #00b3bc;
+    border: .5px solid #00b3bc;
+    width: 100%;
+}
+// titulo
+.rating{
+    margin-top: 5px;
+    margin-left: 20px;
+    width: 90px;
+}
+
+#cardContent ion-list{
+    padding-top: 10px;
+}
+.list ion-item{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+div#cardContent .iconDatos{
+    padding-left: 30px;
+    padding-top: 5px;
+    background: url('/assets/datosGenerales/Profile.svg') center left no-repeat;
+}
+div#cardContent .iconAlergias{
+    padding-left: 30px;
+    padding-top: 5px;
+    background: url('/assets/datosGenerales/Allergies.svg') center left no-repeat;
+}
+div#cardContent .iconHistorial{
+    padding-left: 30px;
+    padding-top: 5px;
+    background: url('/assets/datosGenerales/Folder.svg') center left no-repeat;
+}
+div#cardContent .iconFamiliares{
+    padding-left: 30px;
+    padding-top: 5px;
+    background: url('/assets/datosGenerales/Family.svg') center left no-repeat;
+}
+div#cardContent .iconMetodos{
+    padding-left: 30px;
+    padding-top: 5px;
+    background: url('/assets/datosGenerales/Card.svg') center left no-repeat;
+}
+div#cardContent .iconAddress{
+    padding-left: 30px;
+    padding-top: 5px;
+    background: url('/assets/datosGenerales/Address.png') center left no-repeat;
+}
+
+//edit Profile Photo
+.edit{
+    position: relative;
+    top: -40px;
+    padding-left: 5px;
+}
+.edit ion-icon{
+    background-color: #004c68;
+    padding: 5px;
+    height: 25px;
+    width: 25px;
+    color: #ffffff;
+    border-radius: 50%;
+}
+
+.actionSheet-custom{
+
+}

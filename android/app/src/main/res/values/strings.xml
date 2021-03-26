@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">tidux</string>
+    <string name="title_activity_main">tidux</string>
+    <string name="package_name">tidux.app</string>
+    <string name="custom_url_scheme">tidux.app</string>
+    <string name="notificationChannel">Notificaciones</string>
+</resources>

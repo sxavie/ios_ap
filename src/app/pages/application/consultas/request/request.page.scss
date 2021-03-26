@@ -1,0 +1,318 @@
+// titulo
+#cardContent h2{
+    color: #014c68;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+//lista
+#cardContent .list{
+    padding: 10px;
+    font-size: 16px;}
+#cardContent .list ion-text{
+    font-size: 18px;
+    letter-spacing: -1px;
+    color: #a6a6a6;
+    padding-left: 15px;}
+.reqBtn{
+    font-size:20px;
+    letter-spacing: 1.5pt;
+    width: 60%;
+    margin: 20px auto}
+.reqBtn .btnTxt{
+    color: #ffffff;
+    font-weight: 100;}
+
+.icon-calendar{
+    margin: 0px 15px 0px 5px;
+    width: 50px;
+    height: 65px;
+    background: url('/assets/consultas/Calendar.svg') center left no-repeat;
+    // background-size: cover;
+}
+
+
+.map{
+    width: 100%;
+    height: 320px;
+    margin: 15px auto;
+    box-shadow: 3px 3px 5px #c1c1c1;}
+
+.mapa{
+    width: 100%;
+    height: 100%;;
+}
+
+
+// swicth personalizado
+.switchBtn {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+}
+.switchBtn input {display:none;}
+
+.slide {
+    position: absolute;
+    cursor: pointer;
+    content: "Presencial";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #014c68;
+    -webkit-transition: .4s;
+    transition: .4s;
+    padding: 8px;
+    color: #fff;
+}
+.slide:before {
+    position: absolute;
+    content: "";
+    height: 41px;
+    width: 50%;
+    left: 50%;
+    bottom: 2px;
+    background-color: #04bbbf;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slide {
+    // background-color: #8CE196;
+    padding-left: 40px;
+}
+input:focus + .slide {
+    box-shadow: 0 0 1px #01aeed;
+}
+input:checked + .slide:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    left: -25px;
+}
+
+.slide.round {
+    border-radius: 34px;
+}
+.slide.round:before {
+    border-radius: 25px;
+}
+// swicth personalizado
+
+.ux_button {
+    background-color: #ed6e00 !important;
+}
+
+// tarjeta
+div#cardContent .Visa{
+    padding-left: 56px;
+    height: 65px;
+    background: url('/assets/visa_pay_m_cardicon_.png') center left no-repeat;
+}
+div#cardContent .MasterCard{
+    padding-left: 56px;
+    height: 65px;
+    background: url('/assets/master_pay_m_cardicon_.png') center left no-repeat;
+}
+div#cardContent .cash{
+    margin-left: 0px;
+    margin-top: 1px;
+    padding-left: 56px;
+    height: 65px;
+    background: url('/assets/cash_pay_m_cardicon_.png') center left no-repeat;
+}
+.slotCard{
+    font-size: 18px;
+    font-weight: bold;
+}
+.iconBrand{
+    float: left;
+    height: 100%;
+    margin-left: -6px;
+}
+.cardNumber{
+    margin-left: 15px;
+    letter-spacing: 1px;
+}
+.iconRight{
+    height: 100%;
+    float: right;
+    font-size: 10px;
+    color: #04bbbf;
+}
+.addres-selector{
+    border:1px solid #c1c1c1;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.icon-ticket{
+    width: 45px;
+    height: 45px;
+    margin: 10px 20px 10px 5px;
+    color: #1cc1c5;
+}
+.cuponTxt{
+    letter-spacing: 1px;
+}
+.codeIsValid{
+    color: green !important;
+}
+.codeIsInvalid{
+    color: rgb(165, 0, 0) !important;
+}
+
+.buttonContainer {
+    top: 15px !important;
+    margin: 25px auto !important;
+}
+
+//@at-root
+#switch {
+    position: relative;
+    margin: 25px auto;
+    border-radius: 50px;
+    background: rgb(0, 77, 105);
+    border: 2px solid rgb(0, 77, 105);
+    height: 45px;
+    width: 95%;
+    display: flex;
+}
+
+.buttons {
+    position: relative; 
+    display: flex;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+#select-button {
+    position: absolute;
+    top: 0px;
+    left: 0%;
+    width: 50%;
+    height: 100%;
+    border-radius: 50px;
+    background: rgb( 4, 187, 191);
+    transition: all 500ms;
+}
+#conectado {
+    color: rgb(255, 255, 255);
+    transition: all 500ms;
+}
+
+#desconectado {
+    color: rgb(255, 255, 255);
+    transition: all 500ms;
+}
+
+//@at-root
+
+
+
+
+// SWITCHER
+$black: #000000;
+$white: #FFFFFF;
+$grey:  #c1c1c1;
+.switch{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    
+    span.switcher {
+        position: relative;
+        width:100%;
+        height:50px;
+        border-radius:25px;
+        margin:20px 0;
+        
+        input {
+        appearance: none;
+        position: relative;
+
+        width:100%;
+        height:50px;
+        border-radius:25px;
+
+        background-color:$black;
+        outline:none;
+
+        &:before, &:after {
+            z-index:2;
+
+            position: absolute;
+            top:50%;
+            transform:translateY(-50%);
+
+            color:$white;
+        }
+        &:before {
+            content: 'Virtual';
+            left:20px;
+        }
+        &:after {
+            content: 'Presencial';
+            right:20px;
+        }
+        }
+        label {
+        z-index:1;
+        position: absolute;
+        top:5px;
+        bottom:5px;
+        
+        border-radius:20px;
+        }
+        &.switcher-1 {
+        input {
+            transition:.25s -.1s;
+
+            $backGrndDrk: #004d69;
+            $backGrndLgt: #00b4bd;
+            &:checked {
+                background-color:$backGrndDrk;
+                &:before {
+                    color:$white;
+                    transition: color .5s .2s;
+                }
+                &:after {
+                    color:$grey;
+                    transition: color .5s;
+                }
+                &+label {
+                    left:5px;
+                    right:50%;
+                    background:$backGrndLgt;
+                    transition: left .5s, right .5s;
+                }
+            }
+
+            &:not(:checked) {
+                background:$backGrndDrk;
+                transition: background .5s -.1s;
+                &:before {
+                    color:$grey;
+                    transition: color .5s;
+                }
+                &:after {
+                    color:$white;
+                    transition: color .5s .2s;
+                }
+                &+label {
+                    left:50%;
+                    right:5px;
+                    background:$backGrndLgt;
+                    transition: left .5s, right .5s, background .35s -.1s;
+                }
+            }
+        }
+        }
+    }
+}

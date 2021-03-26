@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="37px" viewBox="0 0 42 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Calendar</title>
+    <g id="Calendar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <g id="Group" transform="translate(4.000000, 16.000000)" fill="#04BBBF">
+                <rect id="Rectangle-Copy-11" x="0" y="6" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-17" x="0" y="12" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-12" x="6" y="6" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-18" x="6" y="12" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-13" x="12" y="6" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-19" x="12" y="12" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-8" x="18" y="0" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-14" x="18" y="6" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-20" x="18" y="12" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-9" x="24" y="0" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-15" x="24" y="6" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-21" x="24" y="12" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-10" x="30" y="0" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-16" x="30" y="6" width="4" height="4"></rect>
+                <rect id="Rectangle-Copy-22" x="30" y="12" width="4" height="4"></rect>
+            </g>
+            <line x1="1.5" y1="11.5" x2="39.5" y2="11.5" id="Line" stroke="#04BBBF" stroke-width="2" stroke-linecap="square"></line>
+            <rect id="Rectangle-Copy-5" stroke="#04BBBF" stroke-width="2" x="1" y="5" width="40" height="31" rx="3"></rect>
+            <rect id="Rectangle" stroke="#04BBBF" x="6.5" y="0.5" width="1" height="8" rx="0.5"></rect>
+            <rect id="Rectangle-Copy-3" stroke="#04BBBF" x="34.5" y="0.5" width="1" height="8" rx="0.5"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+{
+  "appId": "com.vasster.tidux.paciente",
+  "appName": "Tidux Paciente",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000
+    }
+  },
+  "cordova": {}
+}

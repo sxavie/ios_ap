@@ -1,0 +1,96 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-button (click)="toggleMenu()">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only" 
+              name="menu-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          
+          <div id="logo">
+            <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+          </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+
+    <div id="avatar">
+      <ion-avatar>
+          <!-- <img [src]="imgAvatar"> -->
+          <ion-img [src]=" labResponse.doctroFilename "></ion-img>
+      </ion-avatar>
+    </div>
+
+
+    <span style="display:none" class="iconPhone" (click)="calling()">  </span>
+    <span class="iconMessage" (click)="chating()">  </span>
+
+    <div id="cardContent">
+      
+      <ng-template [ngIf]=" labResponse || async " >
+  
+      <div class="title">
+        <ion-text class="titulo"> {{ labResponse.doctroRollment }}. {{ labResponse.doctroName }}  </ion-text>
+      </div>
+      
+      <img style="padding-left: 20px;" class="rating" src="/assets/Rating.svg" >
+      
+      <div class="order_details">
+        
+        <div> {{ labResponse.licence }} </div>
+        <div> {{ labResponse.doctroTitle }} </div>
+        <div>
+          <ion-label> Estado </ion-label>
+          <ion-label style="float: right;"> En Camino  </ion-label>   
+        </div>
+        
+        <div class="arriving_time">
+          <ion-label> El personal químico esta en ruta </ion-label>
+          <ion-label style="float: right; padding-left: 5px;"> 8 min </ion-label>
+          <ion-icon style="float: right; margin-top: 1px; color: #00b3bc;" slot="icon-only" name="time-outline"></ion-icon>
+        </div>
+        
+      </div>
+    </ng-template>
+      
+      <div id="map" class="map"> </div>
+
+      <ion-button  class="cancelBtn" 
+          color="secondaryTUx"
+          expand="block" 
+          shape="round" > 
+          <ion-text class="btnTxt"> Cancelar </ion-text> 
+      </ion-button>   
+
+      <!-- <ion-button  (click)="nextt()"
+        class="cancelBtn" 
+          color="primaryTUx"
+          expand="block"
+          shape="round" > 
+          <ion-text class="btnTxt"> nextt </ion-text> 
+      </ion-button>    -->
+   
+    </div>
+    
+  </div>
+</ion-content> 

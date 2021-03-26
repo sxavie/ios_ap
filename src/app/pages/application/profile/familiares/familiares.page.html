@@ -1,0 +1,73 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/perfil"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+        
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+
+    <div id="avatar">
+      <ion-avatar>
+          <img [src]="userservice.image">
+      </ion-avatar>
+    </div>
+
+    <ion-text id="editSpan" 
+    color="secondaryTUx" 
+    (click)="addMemberModal()"> <ion-icon name="add"></ion-icon> </ion-text>
+
+    
+    <div id="cardContent">
+      
+    <div class="title">
+      <ion-text class="titulo"> Familiares </ion-text>
+    </div>
+      
+    <ion-list class="list">
+
+      <ion-item *ngFor=" let member of userData?.family" detail (click)="goFamiliar( member._id )" >
+
+        <ion-avatar slot="start">
+          <img [src]="member.filename | image:'user'">
+        </ion-avatar>
+        <ion-label> 
+          <h3> {{ member.name }} </h3>  
+          <p> {{member.relationship}}   </p>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+
+      
+      
+    </div>
+    
+  </div>
+</ion-content> 

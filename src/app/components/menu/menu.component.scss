@@ -1,0 +1,99 @@
+.menuContent {
+    margin: 16px 30px 16px;
+}
+
+.menuAvatar {
+    margin-bottom: 20px;
+    padding-top  : 2rem;
+}
+
+ion-avatar {
+    border: 3px solid #004d69;
+    width : 90px;
+    height: 90px;
+}
+
+.nameRow div {
+    color         : #ffffff;
+    letter-spacing: .5px;
+    width         : 100%;
+    font-size     : 20px;
+}
+
+.name-underline {
+    background-color: #004d69;
+    border          : .5px solid #004d69;
+    width           : 99%;
+    left            : 0;
+}
+
+.ratingRow {
+    margin-top: 5px;
+}
+
+.ratingRow img {
+    width       : 40%;
+    margin-right: 10px;
+}
+
+.ratingRow ion-text {
+    color    : grey;
+    font-size: 10px;
+}
+
+// menu list
+.menuList {
+    margin-right: 16px;
+}
+
+ion-list.list-md {
+    background-color: #04bbbf;
+}
+
+
+.menuList ion-item ion-icon {
+    color: #ffffff;
+}
+
+.menuList ion-item ion-text.optTitle {
+    color         : #ffffff;
+    font-size     : 20px;
+    letter-spacing: 1px;
+    font-weight   : lighter;
+    margin-bottom : 5px;
+}
+
+// Footer
+ion-footer {
+    padding : 16px;
+    position: fixed;
+    bottom  : 5px;
+}
+
+ion-footer ion-text {
+    color         : #ffffff;
+    font-size     : 15px;
+    letter-spacing: 1px;
+    font-weight   : lighter;
+    margin-left   : 3px;
+}
+
+hr.privacy-underline {
+    border       : 1px solid ghostwhite;
+    margin-bottom: 16px;
+    margin-top   : 16px;
+}
+
+.privacyLogo {
+    width              : 60px;
+    margin             : auto;
+    // background-image: url('/assets/tiduULogo.PNG')
+}
+
+ion-avatar {
+    img {
+        border-radius: 50%;
+        height       : 100%;
+        width        : 100%;
+    }
+}

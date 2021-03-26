@@ -1,0 +1,97 @@
+
+
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/consultas"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons> 
+        
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+    
+    <div id="cardContent">
+
+      <h2> CONSULTAS </h2>
+     
+      <div class="title">
+        <ion-text class="titulo"> Agendadas </ion-text>
+      </div>
+
+      <!-- (timeSelected)="getSelectedTime($event)" > -->
+      <!-- content -->
+      <div class="calendar">
+
+        <ion-row>
+    
+            <ion-col size="2">
+                <ion-button fill="clear" (click)="back()">
+                    <ion-icon style="font-size: 19px;" name="arrow-back" slot="icon-only"></ion-icon>
+                </ion-button>
+            </ion-col>
+    
+            <ion-col size="8" class="ion-text-center viewTitle">
+                <h2>{{ viewTilte }}</h2>
+            </ion-col>
+    
+            <ion-col size="2">
+                <ion-button fill="clear" (click)="next()">
+                    <ion-icon style="font-size: 19px;" name="arrow-forward" slot="icon-only"></ion-icon>
+                </ion-button>
+            </ion-col>
+    
+        </ion-row> 
+        
+        <!-- [eventSource]="eventSource" -->
+
+       
+
+          <calendar 
+          [eventSource]="eventSource"
+          [dayviewAllDayEventTemplate]="template"
+          [calendarMode]="calendar.mode"
+          [currentDate]="calendar.currentDate"
+          (onTitleChanged)="onViewTitleChanged($event)"
+          (onTimeSelected)="onTimeSelected($event)" 
+          ></calendar>
+
+    
+    </div>
+      <!-- content -->
+      
+    </div> 
+    
+  </div>
+</ion-content> 
+
+
+
+
+
+
+

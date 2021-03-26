@@ -1,0 +1,46 @@
+.subtitle {
+    font-weight: 500;
+    font-size  : 20px;
+    color      : #014c68;
+}
+
+
+.timePick {
+    font-size    : 20px;
+    color        : #004d69;
+    font-weight  : 500;
+    margin-bottom: 20px;
+}
+
+.list {
+    margin-top: 25px;
+}
+
+.serviceTxt {
+    font-size: 15px;
+}
+
+
+.service-item-list {
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-evenly;
+}
+
+.grid-list-services {
+    ion-col {
+        display    : flex;
+        align-items: center;
+    }
+
+    .grid-cols-right {
+        flex-direction: row-reverse;
+        display       : flex;
+        align-content : center;
+    }
+}
+
+.disabled{
+    background-color: gray;
+    cursor: auto;
+}

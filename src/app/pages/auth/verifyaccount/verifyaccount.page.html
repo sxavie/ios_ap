@@ -1,0 +1,55 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="layer" no-scroll >
+    <div class="main ion-padding" >
+
+      <div class="ion-text-center" id="logo">
+        <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        <ion-text class="slogan"> Bienestar para tu hogar </ion-text>
+        <hr class="slogan-underline">
+      </div>
+
+      <div id="verifyContent">
+
+        <p class="ion-text-center"> 
+          Te enviamos un correo y un SMS con un PIN de verificación 
+        </p>
+
+        <div class="input">
+          <ion-item>
+            <ion-input type="text" 
+              placeholder="PIN"
+              [(ngModel)]="pin" 
+              text-right id="inputVerify" 
+              inputmode = numeric
+              type = number
+              (ionChange)=pinValidation($event.target.value) >
+            </ion-input>
+          </ion-item>
+        </div>
+        
+        <ion-button  class="verifyButon"
+          [disabled]="!pinIsValid" 
+          color="primaryTUx" 
+          expand="block" 
+          shape="round" 
+          (click)="verifyAccount()" > 
+
+          <ion-text class="btnTxt"> VERIFICAR </ion-text>
+
+        </ion-button>
+
+        <p (click)="codeResend()" class="ion-text-center resend"> 
+          ¿No tienes el codigo? Reenviar 
+        </p>
+      
+      </div>
+
+    </div>
+  </div>
+  
+</ion-content>
+  
+
+
+

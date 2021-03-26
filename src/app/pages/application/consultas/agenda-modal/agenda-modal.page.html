@@ -1,0 +1,32 @@
+
+<ion-content id="agendaModal">
+ 
+  <div class="main">
+    
+      <ion-label style="color: #fff; font-size: 28px;"> {{ numberDay }} </ion-label> <br>
+      <ion-label style="color: #fff; font-size: 20px;"> {{ nameDay }} </ion-label>
+
+      <hr class="scheduler-event-hr">
+
+      <ion-list>
+
+        <ion-item color="transparent" *ngFor=" let ev of forEvents" lines="none">
+
+          <ion-avatar slot="start">
+            <img [src]="image"> 
+          </ion-avatar>
+
+          <ion-label color="transparent">
+            <h3 style="color: #fff !important">{{ ev.title }}</h3>
+            <p style="color: #fff !important"> {{ ev.time }} </p>
+          </ion-label>
+        </ion-item>
+
+        <hr class="scheduler-event-hr">
+
+      </ion-list>
+
+  </div>
+
+
+</ion-content>

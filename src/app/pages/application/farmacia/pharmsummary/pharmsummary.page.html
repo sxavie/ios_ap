@@ -1,0 +1,107 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+ 
+        <ion-buttons slot="start">
+          <ion-button (click)="toggleMenu()">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only" 
+              name="menu-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          
+          <div id="logo">
+            <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+          </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+
+    <div id="avatar">
+
+      <ion-avatar>
+          <img src="/assets/check.png">
+      </ion-avatar>
+
+    </div>
+
+    <div id="cardContent">
+
+      <h2 class="topTitle ion-text-center"> ¡MUCHAS GRACIAS! </h2>
+
+      <div class="title">
+        <ion-text class="titulo"> Resumen Servicio  </ion-text>
+      </div>
+  
+
+      <ion-list>
+      
+          <ion-item *ngFor="let itm of pharmResponse.items || async">
+
+            <ion-img src=""> </ion-img>
+
+            <div style="padding:20px 0" >
+              <ion-label> {{ itm.description }} ({{itm.quantity}}) </ion-label>  
+            </div>
+          </ion-item>
+      
+        <ion-item>
+
+          <div style="padding:20px 0">
+            <ion-icon slot="icon-only"  style="color:#00b3bc" name="cart-outline" ></ion-icon>
+            <ion-text> Tiempo de entrega </ion-text>
+          </div>
+
+          <ion-text slot="end">
+            <ion-label style="float: right;"> 15 MIN </ion-label>   
+          </ion-text>
+
+        </ion-item>
+
+      </ion-list>
+
+      <ion-list>
+
+        <ion-text class="deliverInfoTxt"> Informacion del repartidor </ion-text>
+
+        <ion-item lines="none">
+
+          <ion-avatar slot="start">
+            <img src="./avatar.svg">
+          </ion-avatar>
+
+          <ion-label>
+            <ion-img class="rating" src="/assets/Rating.svg"></ion-img>
+            <p>Armando Manual Meza Lopez</p>
+          </ion-label>
+
+        </ion-item>
+
+        <ion-item>
+          <ion-textarea rows="6" cols="20" placeholder="Deja un comentario..."></ion-textarea>
+        </ion-item>
+      
+      </ion-list>
+
+      
+    </div>
+    
+  </div>
+</ion-content> 

@@ -1,0 +1,206 @@
+<ion-content id="container"
+	no-scroll
+	padding>
+
+	<div class="main">
+		<div class="navContainer">
+			<ion-item lines="none"
+				color="transparent">
+				<ion-buttons slot="start">
+					<ion-back-button defaultHref="/app/farmacia/addresses"
+						text=""
+						class="navIconBtn">
+					</ion-back-button>
+				</ion-buttons>
+				<div id="logo">
+					<ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+				</div>
+				<ion-buttons slot="end">
+					<ion-button routerLink="/app">
+						<ion-icon class="navIconBtn"
+							slot="icon-only"
+							name="home-outline"></ion-icon>
+					</ion-button>
+				</ion-buttons>
+			</ion-item>
+		</div> <!-- navContainer -->
+
+		<div id="cardContent">
+
+			<div *ngIf="!fromProfile">
+				<h2> ENVÍO </h2>
+			</div>
+
+			<div class="title">
+				<ion-text class="titulo"> Agregar domicilio </ion-text>
+			</div>
+
+			<!-- Formulario de registro -->
+			<form autocomplete="off"
+				[formGroup]="formAddressData"
+				(ngSubmit)="onAddAddress()">
+
+				<ion-list>
+					<!-- Nombre -->
+					<ion-item>
+						<ion-label position="stacked">Nombre descriptivo</ion-label>
+						<ion-input placeholder="Trabajo / Casa / Casa de mamá"
+							name="name"
+							type="text"
+							inputmode="text"
+							formControlName="name"> </ion-input>
+					</ion-item>
+					<!-- calle -->
+					<!-- 	<ion-item class="ion-margin-vertical ion-no-padding">
+						<ion-label position="stacked">Buscar dirección</ion-label>
+						<input id="autoCompleteField"
+							placeholder="Escribe tu direccón para buscar"
+							type="text"
+							inputmode="text">
+					</ion-item> -->
+
+					<ion-item class="serch">
+						<ion-label position="stacked">Buscar dirección</ion-label>
+						<input id="autoCompleteField"
+							placeholder="Buscar dirección"
+							type="text"
+							inputmode="text">
+					</ion-item>
+
+					<!-- Calle -->
+					<ion-item>
+						<ion-label position="stacked">Calle</ion-label>
+						<ion-input name="street"
+							type="text"
+							inputmode="text"
+							formControlName="street"> </ion-input>
+					</ion-item>
+
+					<!-- Codigo Postal -->
+					<ion-item>
+						<ion-label position="stacked">Código postal</ion-label>
+						<ion-input name="zipcode"
+							type="text"
+							inputmode="text"
+							formControlName="zipcode"> </ion-input>
+					</ion-item>
+					<!-- Estado -->
+					<ion-item>
+						<ion-label position="stacked">Estado</ion-label>
+						<ion-input name="state"
+							type="text"
+							inputmode="text"
+							formControlName="state"> </ion-input>
+					</ion-item>
+					<!-- Municipio -->
+					<ion-item>
+						<ion-label position="stacked">Delegación / Municipio</ion-label>
+						<ion-input name="city"
+							type="text"
+							inputmode="text"
+							formControlName="city"> </ion-input>
+					</ion-item>
+					<!-- Colonia -->
+					<ion-item>
+						<ion-label position="stacked">Colonia / Asentamiento</ion-label>
+						<ion-input name="neighborhood"
+							type="text"
+							inputmode="text"
+							formControlName="neighborhood"> </ion-input>
+					</ion-item>
+					<!-- numero -->
+					<ion-item>
+						<ion-label position="stacked">No. Interior</ion-label>
+						<ion-input name="number"
+							type="text"
+							inputmode="text"
+							formControlName="number"> </ion-input>
+					</ion-item>
+					<!-- numeroint NO-->
+					<ion-item>
+						<ion-label position="stacked">No. Exterior / Depto (Opcional)</ion-label>
+						<ion-input name="numeroint"
+							type="text"
+							inputmode="text"> </ion-input>
+					</ion-item>
+					<!-- entre calles NO-->
+					<ion-item>
+						<ion-label position="stacked">Entre Calles (Opcional)</ion-label>
+						<ion-input name="entre "
+							type="text"
+							inputmode="text"> </ion-input>
+					</ion-item>
+
+					<!-- Es tu Trabajo /Casa NO -->
+					<div class="home_job">
+						<ion-label class="label">¿Es tu trabajo o casa ?</ion-label>
+						<ion-radio-group value="casa">
+
+							<div class="home">
+								<ion-radio mode="md"
+									slot="start"
+									value="casa"> Casa </ion-radio>
+								<ion-label> Casa </ion-label>
+							</div>
+
+							<div class="job">
+								<ion-radio mode="md"
+									slot="start"
+									value="trabajo"> Trabajo </ion-radio>
+								<ion-label> Trabajo </ion-label>
+							</div>
+
+						</ion-radio-group>
+
+					</div>
+
+					<!-- telefono  NO -->
+					<ion-item>
+						<ion-input placeholder="Telefono de contacto"
+							name="numero "
+							type="number"
+							inputmode="number"> </ion-input>
+					</ion-item>
+
+					<div *ngIf="!fromProfile"
+						class="tel-text">
+						<ion-text> Llamaran a este numero si hay algun problema con el envío</ion-text>
+					</div>
+
+					<div *ngIf="!fromProfile"
+						class="comments-txt">
+						<ion-text> Indicaciones adicionales para entregar tus comrpas en esta dirección </ion-text>
+					</div>
+
+					<ion-item>
+						<ion-textarea formControlName="references"
+							rows="6"
+							cols="20"
+							placeholder="Referencias"></ion-textarea>
+					</ion-item>
+
+				</ion-list>
+
+				<!-- submit button -->
+
+				<div class="addAddresContainer">
+					<ion-button class="btnSubmit"
+						color="secondaryTUx"
+						type="submit"
+						expand="block"
+						shape="round">
+						<ion-text class="btnTxt"> Continuar </ion-text>
+					</ion-button>
+				</div>
+
+
+			</form>
+
+
+		</div> <!-- cardContent -->
+
+
+
+	</div> <!-- main -->
+
+</ion-content>

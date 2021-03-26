@@ -1,0 +1,176 @@
+#cardContent{
+    overflow: hidden;
+}
+// titulo
+#cardContent h2{
+    color: #014c68;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+div.divider{
+    width: 100%;
+}
+
+div.divider hr{
+    width: 200%;
+    height: 1px;
+    border-width: 0;
+    box-sizing: content-box;
+    background-color: grey;
+    box-shadow: 0px -1px 4px grey;
+    position: relative;
+    left: -50px;
+}
+
+.chat{
+    width: 100%;
+}
+
+.sender{
+    padding:10px;
+    font-size: 12px;
+    width: 75%;
+    text-align: right;
+    float: right;
+    color:white;
+    background-color: #00b4bd;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin: 10px 5px;
+}
+.addressee{
+    padding:10px;
+    font-size: 12px;
+    width: 75%;
+    text-align: left;
+    float: left;
+    color:white;
+    background-color: #004d69;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 10px 5px;
+}
+
+.chatbox{
+    width: 100%;
+}
+.chatbox ion-textarea{
+    border: 1px solid #004d69;
+    border-radius: 10px;
+    padding: 5px;
+    color: #000000;
+    background-color: #f1f1f1;
+}
+
+.chatbox ion-icon{
+    height: 100%;
+    margin: 0 5px;
+    color: #00b4bd;
+}
+
+
+
+// SWITCHER
+$black: #000000;
+$white: #FFFFFF;
+$grey:  #c1c1c1;
+.switch{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    
+    span.switcher {
+        position: relative;
+        width:100%;
+        height:50px;
+        border-radius:25px;
+        margin:20px 0;
+        
+        input {
+        appearance: none;
+        position: relative;
+
+        width:100%;
+        height:50px;
+        border-radius:25px;
+
+        background-color:$black;
+        outline:none;
+
+        &:before, &:after {
+            z-index:2;
+
+            position: absolute;
+            top:50%;
+            transform:translateY(-50%);
+
+            color:$white;
+        }
+        &:before {
+            content: 'Mapa';
+            left:20px;
+        }
+        &:after {
+            content: 'Mensajes';
+            right:20px;
+        }
+        }
+        label {
+        z-index:1;
+        position: absolute;
+        top:5px;
+        bottom:5px;
+        
+        border-radius:20px;
+        }
+        &.switcher-1 {
+        input {
+            transition:.25s -.1s;
+
+            $backGrndDrk: #004d69;
+            $backGrndLgt: #00b4bd;
+            &:checked {
+                background-color:$backGrndDrk;
+                &:before {
+                    color:$white;
+                    transition: color .5s .2s;
+                }
+                &:after {
+                    color:$grey;
+                    transition: color .5s;
+                }
+                &+label {
+                    left:5px;
+                    right:50%;
+                    background:$backGrndLgt;
+                    transition: left .5s, right .5s;
+                }
+            }
+
+            &:not(:checked) {
+                background:$backGrndDrk;
+                transition: background .5s -.1s;
+                &:before {
+                    color:$grey;
+                    transition: color .5s;
+                }
+                &:after {
+                    color:$white;
+                    transition: color .5s .2s;
+                }
+                &+label {
+                    left:50%;
+                    right:5px;
+                    background:$backGrndLgt;
+                    transition: left .5s, right .5s, background .35s -.1s;
+                }
+            }
+        }
+        }
+    }
+}

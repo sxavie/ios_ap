@@ -1,0 +1,62 @@
+// contenido:
+#avatar{
+    width: 50%;
+    height: 150px;
+    width: 150px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: auto;
+    position: relative;
+    margin-top: 10px;
+    z-index: 1;
+}
+#avatar ion-avatar{
+    border:3px solid #00b3bc;
+    width: 100%;
+    height: 100%;
+}
+#cardContent{
+    padding:100px 20px 20px 20px ;
+    margin-bottom: 16px; //espacio al fondo de la tarjeta de informacion
+    border:1px solid #c2c2c2;
+    background-color: #ffffff;
+    border-radius: 30px;
+    height: 100%;
+    transform: translateY(-75px); // mueve la card 75px abajo, mitad del alto del la imagen de avatar
+}
+
+
+// titulo
+
+#cardContent ion-list{
+    padding: 5px 0;
+}
+#cardContent .list{
+    margin-top: 55px;
+    font-size: 16px;
+}
+
+
+#editSpan{
+    position: relative;
+    z-index: 2;
+    float: right;
+    margin-right: 30px;
+}
+
+.editDato{
+    height: 45px;
+    text-align: right;
+    width: 150px;
+    display: flex;
+    align-items: center;
+}
+.iconEdit{
+    display: flex;
+    align-items: center;
+}
+.disabledText{
+    opacity: 0.4;
+}

@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>purchasetrack</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="chat">
+
+    <!-- <div class="sender">
+      <ion-text> Hola Armando, estoy espernado enfrente del oxxo con una sombirlla azul </ion-text>
+    </div>
+    
+    <div class="addressee"> <ion-text> ¡Entendido! (y) </ion-text> </div> -->
+
+    <div *ngFor="let message of messages || async" [class]="message.source">
+      <ion-text> {{ message.msg }} </ion-text>
+    </div>
+   
+  </div>
+
+   <div class="divider"> <hr> </div>
+
+   <div class="chatbox">
+    <ion-item lines="none">
+      <ion-textarea [(ngModel)]="msg"></ion-textarea>
+      <ion-icon slot="end" name="send-outline" (click)="sendMessage()"></ion-icon>
+    </ion-item>
+   </div>
+
+
+
+   <div>
+
+    <h3> my-id: {{newpeerid}} </h3>
+
+    <video id="myvideo" autoplay playsinline></video>
+    <video id="partnerVideo" autoplay playsinline></video>
+
+    <ion-button expand="full" (click)="openCam()"> VIdeo </ion-button>
+
+
+   </div>
+
+
+
+</ion-content>

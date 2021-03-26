@@ -1,0 +1,72 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+
+      <ion-item lines="none" color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/app" text="" class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon class="navIconBtn" slot="icon-only" name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+
+      </ion-item>
+
+    </div> <!-- navButtons -->
+
+    <div id="cardContent" class="fit-card-content">
+
+      <h2> CONSULTAS </h2>
+
+      <!-- content -->
+      <div class="list">
+
+        <ion-item class="fstItem"></ion-item>
+
+        <ion-item detail class="item-consultReason" (click)="reqNewOrder(1)">
+          <ion-img src="../../assets/consultas/estetoscopio.png"></ion-img>
+          <ion-text> Consulta general </ion-text>
+
+        </ion-item>
+
+        <ion-item detail class="item-consultReason" (click)="reqNewOrder(2)">
+          <ion-img src="../../assets/consultas/inyeccion.png"></ion-img>
+          <ion-text> Aplicación de medicamento </ion-text>
+
+        </ion-item>
+
+        <ion-item detail class="item-consultReason" (click)="reqNewOrder(3)">
+          <ion-img src="../../assets/consultas/suturacion.png"></ion-img>
+          <ion-text> Retiro de puntos </ion-text>
+
+        </ion-item>
+
+        <ion-item detail class="item-consultReason" (click)="reqNewOrder(4)">
+          <ion-img src="../../assets/consultas/curacion.png"></ion-img>
+          <ion-text> Heridas / curaciones </ion-text>
+        </ion-item>
+
+        <ion-item *ngIf="eventSource.length>0" class="item-consultReason" (click)="reqNewOrder(6)">
+          <ion-img src="../../assets/consultas/reloj.png"></ion-img>
+          <ion-text> Consultas agendadas </ion-text>
+          <ion-badge slot="end" color="primary"> {{ eventSource.length }}</ion-badge>
+        </ion-item>
+
+      </div>
+      <!-- content -->
+
+    </div>
+
+  </div>
+</ion-content>

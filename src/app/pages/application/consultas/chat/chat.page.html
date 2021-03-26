@@ -1,0 +1,47 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <app-header [home]="true"></app-header>
+    
+    <div id="cardContent">
+
+      <h2> SEGUIMIENTO DE CONSULTA </h2>
+     
+      <!-- content -->
+       <ion-item lines="none">
+        <!-- <ion-chip slot="start"> -->
+          <ion-avatar slot="start">
+            <img [src]="userservice.transformFamilyFilename(orderservice.consultResponse.filename)" />
+          </ion-avatar>
+          <ion-label> {{ orderservice.consultResponse.doctor }} </ion-label>
+        <!-- </ion-chip> -->
+        <!-- <ion-icon slot="end" name="call-outline" (click)="videoCall()" ></ion-icon> -->
+       </ion-item>
+
+       <div class="divider"> <hr> </div>
+
+       <div class="chat">
+        <div *ngFor="let message of orderservice.consultMessages" [class]="message.source" >
+          <ion-text> {{ message.msg }} </ion-text>
+        </div>
+       </div>
+
+       <div class="divider"> <hr> </div>
+       
+       
+      <div class="chatbox">
+        
+        <ion-item lines="none">
+          <ion-textarea [(ngModel)]="msg"></ion-textarea>
+          <ion-icon slot="end" name="send-outline" (click)="sendMessage()"></ion-icon>
+        </ion-item>
+      </div>
+    
+      
+    </div>
+    
+  </div>
+</ion-content> 
+
+

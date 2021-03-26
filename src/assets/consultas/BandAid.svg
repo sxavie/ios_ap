@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="56px" viewBox="0 0 44 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Band aid</title>
+    <g id="Band-aid" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(22.000000, 28.000000) rotate(60.000000) translate(-22.000000, -28.000000) translate(-5.000000, 19.000000)" stroke="#04BBBF">
+            <rect id="Rectangle" stroke-width="2" x="1.9330127" y="1.3839746" width="51" height="15" rx="7.5"></rect>
+            <rect id="Rectangle" stroke-width="2" x="18.9330127" y="1.3839746" width="17" height="15"></rect>
+            <circle id="Oval" cx="20.6387841" cy="2.65192379" r="1"></circle>
+            <circle id="Oval-Copy-7" cx="31.7990381" cy="3.32179677" r="1"></circle>
+            <circle id="Oval-Copy-8" cx="20.2368603" cy="9.34807621" r="1"></circle>
+            <circle id="Oval-Copy-9" cx="32.7631397" cy="9.65192379" r="1"></circle>
+            <circle id="Oval-Copy-12" cx="27.5669873" cy="6.65192379" r="1"></circle>
+            <circle id="Oval-Copy-13" cx="27.1650635" cy="13.3480762" r="1"></circle>
+            <circle id="Oval-Copy-10" cx="21.2009619" cy="15.6782032" r="1"></circle>
+            <circle id="Oval-Copy-11" cx="32.3612159" cy="16.3480762" r="1"></circle>
+        </g>
+    </g>
+</svg>

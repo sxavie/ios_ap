@@ -1,0 +1,178 @@
+<ion-content id="container"
+	no-scroll
+	padding>
+
+	<div class="main">
+
+		<div class="navContainer">
+
+			<ion-item lines="none"
+				color="transparent">
+
+				<ion-buttons slot="start">
+					<ion-back-button defaultHref="/app/perfil"
+						text=""
+						class="navIconBtn">
+					</ion-back-button>
+				</ion-buttons>
+
+				<div id="logo">
+					<ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+				</div>
+
+				<ion-buttons slot="end">
+					<ion-button routerLink="/app">
+						<ion-icon class="navIconBtn"
+							slot="icon-only"
+							name="home-outline"></ion-icon>
+					</ion-button>
+				</ion-buttons>
+
+			</ion-item>
+
+		</div> <!-- navButtons -->
+
+		<div id="avatar">
+			<ion-avatar>
+				<img [src]="imgAvatar">
+			</ion-avatar>
+		</div>
+
+		<div id="cardContent">
+
+			<ion-text id="editSpan"
+				color="primaryTUx"
+				(click)="edit()"> {{ edit_save }} </ion-text>
+
+			<div class="title">
+				<ion-text class="titulo"> Datos Generales </ion-text>
+
+			</div>
+
+			<ng-template [ngIf]="userData || async "></ng-template>
+
+			<ion-list class="list">
+
+				<ion-item>
+					<ion-text> Nombre </ion-text>
+					<div slot="end"
+						class="editDato">
+						<div>
+							<ion-input [(ngModel)]="username"
+								[disabled]="!isEdit"> </ion-input>
+						</div>
+						<div class="iconEdit">
+							<ion-icon *ngIf="isEdit"
+								name="pencil-outline"
+								slot="icon-only"> </ion-icon>
+						</div>
+					</div>
+				</ion-item>
+
+				<!-- Edad -->
+				<ion-item>
+					<ion-text> Edad </ion-text>
+					<div slot="end"
+						class="editDato">
+						<div style="width: 100%;">
+							<ion-text class="input-years"
+								*ngIf="!isEdit"><span class="disabledText">{{ edad }}</span></ion-text>
+							<ion-datetime [(ngModel)]="newBirth"
+								*ngIf="isEdit"
+								displayFormat="YYYY MM DD"
+								[value]="userData.birthday"></ion-datetime>
+						</div>
+						<div *ngIf="isEdit"
+							class="iconEdit">
+							<ion-icon name="pencil-outline"
+								slot="icon-only"> </ion-icon>
+						</div>
+					</div>
+				</ion-item>
+
+
+				<!-- Genero -->
+				<ion-item>
+					<ion-text> Género </ion-text>
+					<div slot="end"
+						class="editDato">
+						<div style="width: 100%;">
+							<ion-text *ngIf="isEdit"
+								(click)="genderPick()">{{ usergender }}</ion-text>
+							<ion-text class="disabledText"
+								*ngIf="!isEdit"> {{ usergender }} </ion-text>
+						</div>
+						<div class="iconEdit">
+							<ion-icon *ngIf="isEdit"
+								name="pencil-outline"
+								slot="icon-only"> </ion-icon>
+						</div>
+					</div>
+				</ion-item>
+
+				<!-- Peso -->
+				<ion-item>
+					<ion-text> Peso </ion-text>
+					<div slot="end"
+						class="editDato">
+						<div>
+							<ion-input class="input-weight"
+								[(ngModel)]="userweight"
+								[disabled]="!isEdit"
+								type="number"
+								inputmode="numeric"> </ion-input>
+						</div>
+						<div class="iconEdit">
+							<ion-icon *ngIf="isEdit"
+								name="pencil-outline"
+								slot="icon-only"> </ion-icon>
+						</div>
+					</div>
+				</ion-item>
+
+				<!-- Altura -->
+				<ion-item>
+					<ion-text> Altura </ion-text>
+					<div slot="end"
+						class="editDato">
+						<div>
+							<ion-input class="input-height"
+								[(ngModel)]="userheight"
+								[disabled]="!isEdit"
+								type="number"
+								inputmode="numeric"> </ion-input>
+						</div>
+						<div class="iconEdit">
+							<ion-icon *ngIf="isEdit"
+								name="pencil-outline"
+								slot="icon-only"> </ion-icon>
+						</div>
+					</div>
+				</ion-item>
+
+				<!-- Tipo de sangre -->
+				<ion-item>
+
+					<ion-text> Tipo de sangre </ion-text>
+
+					<div slot="end"
+						class="editDato">
+						<div style="width: 100%;">
+							<ion-text *ngIf="isEdit"
+								(click)="bloodPick()">{{ userblood }}</ion-text>
+							<ion-text class="disabledText"
+								*ngIf="!isEdit">{{ userblood }}</ion-text>
+						</div>
+						<div class="iconEdit">
+							<ion-icon *ngIf="isEdit"
+								name="pencil-outline"
+								slot="icon-only"> </ion-icon>
+						</div>
+					</div>
+				</ion-item>
+
+			</ion-list>
+		</div>
+
+	</div>
+</ion-content>

@@ -1,0 +1,82 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+      <ion-item lines="none" color="transparent">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/app/labs" text="" class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon class="navIconBtn" slot="icon-only" name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </div> <!-- navContainer -->
+
+    <div id="cardContent">
+
+      <div>
+        <h2> LABORATORIOS </h2>
+      </div>
+
+      <div class="title">
+        <ion-text class="titulo"> Servicios Ofrecidos </ion-text>
+      </div>
+
+
+      <ion-list class="list">
+
+        <!-- <ion-radio-group [(ngModel)]="serviceSelected" value=""> -->
+
+        <ion-item *ngFor="let service of labServicesList; let i = index" (click)="addService(service)" >
+
+          <!-- <div class="service-item-list"> -->
+
+
+          <ion-grid class="grid-list-services">
+            <ion-row>
+              <ion-col size="9">
+                {{service.description}}
+              </ion-col>
+              <ion-col class="grid-cols-right" size="3">
+                ${{ service.price }}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <!-- </div> -->
+
+
+          <ion-checkbox mode="ios"></ion-checkbox>
+          <!-- <ion-radio [value]="service" slot="end" mode="md"></ion-radio> -->
+        </ion-item>
+
+        <!-- </ion-radio-group> -->
+
+
+
+      </ion-list>
+
+      <div *ngIf="servicesRequestList.length>0" class="tiduxButton-container"  >
+        <div *ngIf="numero > 0" class="tx-button blue" (click)="serviceRequest()">
+          <ion-label> Solicitar </ion-label>
+        </div>
+      </div>
+
+      <div *ngIf="!servicesRequestList.length>0" class="tiduxButton-container"  >
+        <div *ngIf="numero > 0" class="tx-button disabled" (click)="showWarning()" >
+          <ion-label> Solicitar </ion-label>
+        </div>
+      </div>
+
+
+    </div> <!-- cardContent -->
+
+  </div> <!-- main -->
+
+</ion-content>

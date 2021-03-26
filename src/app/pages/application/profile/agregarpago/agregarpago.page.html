@@ -1,0 +1,113 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/perfil"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        
+        <div id="logo">
+          <ion-img src="../../../assets/tidulogowhite_s.png"></ion-img>
+        </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+          
+        </ion-buttons> 
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+
+    <div id="avatar">
+      <ion-avatar>
+          <!-- <img [src]="userservice.usuario.imageUrl"> -->
+          <img [src]="imgAvatar || async ">
+      </ion-avatar>
+    </div>
+
+    
+    <div id="cardContent">
+      
+      <div class="title">
+        <ion-text class="titulo"> Agregar Tarjeta </ion-text>
+      </div>
+      
+      <div class="form-container">
+
+        <form [formGroup]="paymentMethodFrm" (ngSubmit)="saveRequest()">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div class="controlErrors">
+                  <ion-label *ngIf="cardControlErrors">
+                    {{cardControlErrors.errorMessage}}
+                  </ion-label>
+                </div> 
+                <div class="field">
+                  <ion-input formControlName="cardNumber" type="text" inputmode="numeric" (ionChange)="numberGropuSeparator()"
+                    placeholder="XXXX-XXXX-XXXX-XXXX"></ion-input>
+                    <ion-icon name="card"></ion-icon>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <div class="controlErrors">
+                  <ion-label *ngIf="dateControlErrors">
+                    {{dateControlErrors.errorMessage}}
+                  </ion-label>
+                </div>
+                <div class="field centered">
+                  <ion-input formControlName="expiresDate" type="text" inputmode="numeric" max="5" maxlength="5" (ionChange)="expiresDateSeparator()"
+                    placeholder="00/00"></ion-input>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div class="controlErrors">
+                  <ion-label *ngIf="codeControlErrors">
+                    {{codeControlErrors.errorMessage}}
+                  </ion-label>
+                </div>
+                <div class="field centered">
+                  <ion-input formControlName="securityCode" type="text" inputmode="numeric" (ionChange)="securityCodeViewValidator()"
+                    placeholder="CVV"></ion-input>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </form>
+
+
+        <div class="add-button">
+
+          <div class="tx-button blue" (click)="processRequest()">
+            <ion-label> AGREGAR </ion-label>
+            <div></div>
+          </div>
+    
+        </div>
+
+      </div>
+      
+
+    </div>
+    
+  </div>
+</ion-content> 

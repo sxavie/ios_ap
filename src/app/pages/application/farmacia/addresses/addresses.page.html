@@ -1,0 +1,94 @@
+<ion-content id="container"
+	no-scroll
+	padding>
+
+	<div class="main">
+		<div class="navContainer">
+			<ion-item lines="none"
+				color="transparent">
+				<ion-buttons slot="start">
+					<ion-back-button defaultHref="/app/home"
+						text=""
+						class="navIconBtn">
+					</ion-back-button>
+
+				</ion-buttons>
+				<div id="logo">
+					<ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+				</div>
+				<ion-buttons slot="end">
+					<ion-button routerLink="/app">
+						<ion-icon class="navIconBtn"
+							slot="icon-only"
+							name="home-outline"></ion-icon>
+					</ion-button>
+				</ion-buttons>
+			</ion-item>
+		</div> <!-- navContainer -->
+
+		<div id="cardContent">
+
+			<!-- <div>
+        <h2> ENVÍO </h2>
+      </div> -->
+			<h4> </h4>
+
+			<div class="title">
+				<ion-text class="titulo"> Mis domicilios </ion-text>
+			</div>
+
+			<ion-list class="main-addres-list">
+				<ion-text class="listSubTitle"> DIRECCIÓN DE ENVÍO </ion-text>
+
+				<ion-radio-group [(ngModel)]="selectedIDAddress"
+					(ionChange)="changeAddress()">
+					<div *ngFor="let address of myAddresses || async ">
+
+						<!-- (ionDrag)="dragingRemove($event, address)" > -->
+						<ion-item-sliding>
+
+
+							<ion-item>
+								<ion-radio slot="start"
+									mode="md"
+									[value]="address._id"></ion-radio>
+
+								<div class="main-addresContainer">
+									<div> {{ address.street }}. No {{ address.number }} </div>
+									<div> Col. {{ address.neighborhood}}, </div>
+									<div> {{ address.City }}, {{address.state }}, {{address.country}} </div>
+									<div> CP. {{address.zipcode }} </div>
+								</div>
+							</ion-item>
+
+							<ion-item-options side="end">
+								<ion-item-option color="danger"
+									expandable
+									(ionSwipe)="slidingDraging(address)">
+									<ion-icon slot="icon-only"
+										name="trash"
+										(click)="deleteAddress(address)"></ion-icon>
+								</ion-item-option>
+							</ion-item-options>
+
+						</ion-item-sliding>
+					</div>
+
+				</ion-radio-group>
+
+			</ion-list>
+
+			<hr class="containerDivider">
+
+			<ion-icon class="addAddress-ico"
+				name="add"></ion-icon>
+			<ion-text class="addAddress-txt"
+				(click)="addAddress()"> Agregar domicilio </ion-text>
+
+		</div> <!-- cardContent -->
+
+
+
+	</div> <!-- main -->
+
+</ion-content>

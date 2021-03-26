@@ -1,0 +1,44 @@
+:host ::ng-deep {
+    .event-detail-container{
+        display: none;
+    }
+    .monthview-container {
+        height: auto !important
+    }
+
+    // td.monthview-selected{
+    //     background-color:white;
+    //     color: black
+    // }
+
+
+    table.table-bordered{
+        width: auto;
+        font-size: 20px;
+    }
+
+    table.table-bordered{
+        border: none !important;
+    }
+    .table-bordered th, .table-bordered td{
+        border: none !important;
+        border-radius: 50%;
+    }
+
+    .table-bordered thead tr{
+        color: #014c68
+    }
+    
+}
+
+.viewTitle{ 
+    text-transform: capitalize;
+    font-weight: 700; 
+    font-size: 20px; color: #014c68; 
+}
+.calendar{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+

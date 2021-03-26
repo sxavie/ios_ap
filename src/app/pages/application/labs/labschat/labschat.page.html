@@ -1,0 +1,74 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+      <ion-item 
+          lines="none"  
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/labs/labsinroute"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+    
+    <div id="cardContent">
+
+      <h2> SEGUIMIENTO DE COMPRA </h2>
+     
+      <!-- content -->
+       <ion-item lines="none">
+        <!-- <ion-chip slot="start"> -->
+          <ion-avatar slot="start">
+            <img [src]="labsservices.labResponse.doctroFilename" />
+          </ion-avatar>
+          <ion-label> Armado Manuel Meza Diaz </ion-label>
+        <!-- </ion-chip> -->
+        <ion-icon slot="end" name="call-outline" (click)="videoCall()" ></ion-icon>
+       </ion-item>
+
+       <div class="divider"> <hr> </div>
+
+       <div class="chat">
+        <div *ngFor="let message of messages" [class]="message.source" >
+          <ion-text> {{ message.msg }} </ion-text>
+        </div>
+       </div>
+
+       <div class="divider"> <hr> </div>
+       
+       
+      <div class="chatbox">
+        
+        <ion-item lines="none">
+          <ion-textarea [(ngModel)]="msg"></ion-textarea>
+          <ion-icon slot="end" name="send-outline" (click)="sendMessage()"></ion-icon>
+        </ion-item>
+      </div>
+    
+      
+    </div>
+    
+  </div>
+</ion-content> 
+
+

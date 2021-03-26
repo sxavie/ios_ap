@@ -1,0 +1,82 @@
+<ion-content >
+
+    <ion-header class="ion-no-border">
+        <ion-toolbar>
+            <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"
+                text="" color="secondaryTUx"></ion-back-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+
+    <div class="main ion-padding">
+        
+        <!-- Logo -->
+        <ion-img id="logo_inicio" src="/assets/tidulogoblack.png"></ion-img>
+        
+        <!-- Formulario de registro -->
+        <form autocomplete="off"
+        [formGroup]="formData"
+        (ngSubmit)="onRegister()">
+            
+            <!-- Nombre --> 
+            <ion-item class="item">
+                <ion-input placeholder="Nombre"
+                    name="nombre"                    
+                    type="text"
+                    inputmode="text"
+                    formControlName="name" > </ion-input>
+            </ion-item>
+
+            <!-- Correo -->
+            <ion-item class="item">
+                <ion-input placeholder="Correo"
+                    name="email"                    
+                    type="email"
+                    inputmode="email"
+                    formControlName="email"></ion-input>
+            </ion-item>
+
+            <!-- Contraseña -->
+            <ion-item class="item">
+                <ion-input placeholder="Contraseña"
+                    name="password"                    
+                    type="password"
+                    inputmode="text"
+                    formControlName="password" ></ion-input>
+            </ion-item>
+
+            <!-- Telefono -->
+            <ion-item class="item">
+                <ion-input placeholder="Teléfono"
+                    name="telefono"                    
+                    type="number"
+                    inputmode="tel"
+                    formControlName="mobile" ></ion-input>
+            </ion-item>
+
+            <!-- Terminos y condiciones -->
+            <ion-item lines="none" class="item">
+                <ion-checkbox name="terminos" 
+                    slot="start" 
+                    mode="md"
+                    formControlName="terminos">  </ion-checkbox>
+                <ion-label class="conditions"> 
+                    Acepto <a href="/"> Términos y Condiciones </a>  
+                </ion-label>
+            </ion-item> 
+        
+            <!-- Botton Registro -->
+            <ion-button class="btnSubmit"
+                color="primaryTUx"
+                type="submit" 
+                expand="block"
+                shape="round" > 
+                <ion-text class="btnTxt"> Registrarse </ion-text>
+            </ion-button>    
+
+        </form> 
+
+    </div>
+
+</ion-content>

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "876586087682",
+    "project_id": "pruebas-vasster",
+    "storage_bucket": "pruebas-vasster.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876586087682:android:f133b39c42281099b33e1b",
+        "android_client_info": {
+          "package_name": "com.vasster.tidux.doctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876586087682-934s8vdnl2omh6hd1bta0rp6nn5ip6cq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7-fZvPxZLMXEONwWc0pkh15a2mW0lJU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876586087682-934s8vdnl2omh6hd1bta0rp6nn5ip6cq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876586087682:android:596f06cea5ba6379b33e1b",
+        "android_client_info": {
+          "package_name": "com.vasster.tidux.paciente"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876586087682-934s8vdnl2omh6hd1bta0rp6nn5ip6cq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7-fZvPxZLMXEONwWc0pkh15a2mW0lJU4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876586087682-934s8vdnl2omh6hd1bta0rp6nn5ip6cq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

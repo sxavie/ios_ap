@@ -1,0 +1,82 @@
+<ion-content class="ion-padding">
+
+  <ion-item lines="none">
+    <ion-icon name="close-outline" slot="start"
+        (click)="close()" ></ion-icon>
+  </ion-item>
+
+  <div class="main ion-padding">
+
+    <ion-img id="logo" src="/assets/tidulogoblack.png"></ion-img>
+
+    <p class="ion-text-center"> 
+      Registre los datos de su familiar.
+    </p>
+
+    <form autocomplete="off" 
+    [formGroup]="FormFamiliar"
+    (ngSubmit)="addFamiliar()">
+
+
+    <ion-item class="item">
+        <ion-label position="Nombre"> Nombre </ion-label>
+        <ion-input class="ion-text-right" slot="end"
+            name="name"                    
+            type="text"
+            inputmode="text"
+            formControlName="name" >
+        </ion-input>
+    </ion-item>
+
+    <ion-item class="item">
+      <ion-label>Parentesco</ion-label>
+      <ion-select value="" 
+        name="relationship"
+        formControlName="relationship"
+        okText="OK" 
+        cancelText="Cerrar">
+          <ion-select-option value="Padre">Padre</ion-select-option>
+          <ion-select-option value="Madre">Madre</ion-select-option>
+          <ion-select-option value="Hijo">Hijo</ion-select-option>
+          <ion-select-option value="Hija">Hija</ion-select-option>
+      </ion-select>
+    </ion-item>
+ 
+
+    <ion-button  class="btnSubmit" 
+        color="secondaryTUx"
+        type="submit"  
+        expand="block"
+        shape="round" > 
+        <ion-text class="btnTxt"> Agregar </ion-text> 
+    </ion-button>    
+
+</form> 
+
+    <!-- <ion-list>
+    
+      <ion-item>
+        <ion-label position="Nombre"> Nombre </ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Parentesco</ion-label>
+        <ion-select value="" okText="Okay" cancelText="Dismiss">
+            <ion-select-option value="Padre">Padre</ion-select-option>
+            <ion-select-option value="Madre">Madre</ion-select-option>
+            <ion-select-option value="Hijo">Hijo</ion-select-option>
+            <ion-select-option value="Hija">Hija</ion-select-option>
+            </ion-select>
+        </ion-item>
+    
+      </ion-list>
+    
+      
+      <ion-button color="primary"></ion-button> -->
+
+  </div>
+</ion-content>
+  
+
+

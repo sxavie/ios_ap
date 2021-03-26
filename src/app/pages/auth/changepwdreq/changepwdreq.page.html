@@ -1,0 +1,63 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="layer" no-scroll >
+    <div class="main ion-padding" >
+
+      <div class="ion-text-center" id="logo">
+        <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        <ion-text class="slogan"> Bienestar para tu hogar </ion-text>
+        <hr class="slogan-underline">
+      </div>
+
+      <div id="verifyContent">
+
+        <p class="ion-text-center"> 
+          Introduce tu nueva contraseña 
+        </p>
+
+        <div class="inputs">
+
+        
+
+        <div class="input">
+          <ion-item>
+            <ion-input type="text" 
+              placeholder="Nueva contraseña"
+              [(ngModel)]="password" 
+              inputmode = "text"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+        <div class="input">
+          <ion-item>
+            <ion-input type="text" 
+              placeholder="Repite contraseña"
+              [(ngModel)]="passwordValidation" 
+              inputmode = "text"
+            ></ion-input>
+          </ion-item>
+        </div>
+
+      </div>
+        
+        <ion-button  class="verifyButon"
+          color="primaryTUx" 
+          expand="block" 
+          shape="round" 
+          (click)="changePassword()" > 
+
+          <ion-text class="btnTxt"> Actualizar contraseña </ion-text>
+
+        </ion-button>
+      
+      </div>
+
+    </div>
+  </div>
+  
+</ion-content>
+  
+
+
+

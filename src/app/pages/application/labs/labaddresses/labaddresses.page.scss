@@ -1,0 +1,58 @@
+
+#logo{
+    width: 50%;
+    margin: 0 auto;
+}
+.listSubTitle{
+    font-size: 13px;
+    color: #d8d8d8;
+    margin: 5px 10px;
+    letter-spacing: 1px;
+}
+.main-addres-list{
+    margin-top: 20px;
+}
+.main-addresContainer{
+    width: 100%;
+    font-size: 13px;
+    color: #808080;
+    padding: 10px 5px 10px 20px;
+  }
+.main-addresContainer div{
+    padding: 2px 0;
+    width: 100%;
+}
+.main-iconContainer{
+    font-size: 12px;
+    display: flex;
+    justify-content: center; 
+    color: #03babe;
+    padding:5px
+}
+.main-iconContainer ion-icon{
+    font-size: 14px;
+}
+
+.addAddress-txt{
+    color: #03babe;
+    padding: 0px 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.addAddress-ico{
+    color: #03babe;
+    padding: 10px 5px 0px 0px;
+    font-size: 14px;
+}
+
+// lab addresssss
+.buttonContainer{
+    width: 60%;
+    margin: 100px auto 0;
+}
+
+.disabled{
+    background-color: gray;
+    cursor: auto;
+}

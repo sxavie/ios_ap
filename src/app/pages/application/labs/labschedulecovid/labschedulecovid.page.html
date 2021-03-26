@@ -1,0 +1,74 @@
+
+
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+      <ion-item lines="none" 
+          color="transparent">
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/labs/labsservices"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </div> <!-- navContainer -->
+
+    <div id="cardContent">
+
+      <div>
+        <h2> LABORATORIOS </h2>
+      </div>
+
+      <div class="title">
+        <ion-text class="titulo"> Agendar </ion-text>
+      </div>
+          
+      <app-calendar  
+        (timeSelected)="getSelectedTime($event)" >
+      </app-calendar>
+
+      <!-- <div class="title">
+        <ion-text class="subtitle"> Horarios Disponibles </ion-text>
+      </div> -->
+
+      <ion-item class="timePick">
+        <ion-label class="title_2">Horarios Disponibles</ion-label>
+        <ion-datetime
+          [placeholder]="timeNow"  
+          [value]="timeNow"  
+          [(ngModel)]="timeSelected" 
+          displayFormat="HH:mm A"
+          [disabled]="timeDisabled" 
+          done-text="Seleccionar"></ion-datetime>
+      </ion-item>
+
+
+      <div class="tiduxButton-container">
+        <div class="tx-button blue" (click)="labs_next()">
+          <ion-label> Continuar </ion-label>
+        </div>
+      </div>
+
+    </div> <!-- cardContent -->
+   
+  </div> <!-- main -->
+
+</ion-content> 
+
+
+
+

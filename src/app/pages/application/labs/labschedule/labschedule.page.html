@@ -1,0 +1,98 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+      <ion-item lines="none" color="transparent">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/app/labs/labsservices" text="" class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon class="navIconBtn" slot="icon-only" name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </div> <!-- navContainer -->
+
+    <div id="cardContent">
+
+      <div>
+        <h2> LABORATORIOS </h2>
+      </div>
+
+      <div class="title">
+        <ion-text class="titulo"> Agendar </ion-text>
+      </div>
+
+      <app-calendar (timeSelected_emmiter)="getSelectedTime($event)">
+      </app-calendar> 
+
+      <!-- <div class="title">
+        <ion-text class="subtitle"> Horarios Disponibles </ion-text>
+      </div> -->
+
+      <hr style="background-color: #f0f0f0;">
+
+      <ng-template [ngIf]="avalidableHours.length>0">
+        <div class="schedulerListContainer">
+          <ion-list class="list">
+
+            <ion-list-header>
+              Horarios disponibles
+            </ion-list-header>
+
+            <ion-radio-group [(ngModel)]="dateServiceSelectedValue.time" value="">
+
+              <ion-item *ngFor=" let hours of avalidableHours" lines="none">
+                <!-- *ngFor="let service of labServicesList; let i = index" -->
+                <ion-icon slot="start" name="time-outline"></ion-icon>
+                <ion-label *ngIf="hours<10"> 0{{hours}}:00 </ion-label>
+                <ion-label *ngIf="hours>9"> {{hours}}:00 </ion-label>
+                <ion-radio [value]="hours" slot="end" mode="md"></ion-radio>
+                <!-- [value]="service"  -->
+              </ion-item>
+
+            </ion-radio-group>
+
+          </ion-list>
+        </div>
+
+        <div *ngIf="dateServiceSelectedValue.time" class="tiduxButton-container">
+          <div class="tx-button blue" (click)="labs_next()">
+            <ion-label> Continuar </ion-label>
+          </div>
+        </div>
+
+        <div *ngIf="!dateServiceSelectedValue.time" class="tiduxButton-container"  >
+          <div class="tx-button disabled" (click)="showWarning()" >
+            <ion-label> Continuar </ion-label>
+          </div>
+        </div>
+
+      </ng-template>
+
+      <ng-template [ngIf]="avalidableHours.length===0">
+
+        <div class="noSchedulerAvailable">
+          <ion-label> No hay horarios disponibles </ion-label>
+        </div>
+
+      </ng-template>
+
+      <!-- <ion-item class="timePick">
+        <ion-label class="title_2">Horarios Disponibles</ion-label>
+        <ion-datetime [placeholder]="timeNow" [value]="timeNow" [(ngModel)]="timeSelected" displayFormat="HH:mm A"
+          [disabled]="timeDisabled" done-text="Seleccionar"></ion-datetime>
+      </ion-item> -->
+
+
+
+    </div> <!-- cardContent -->
+
+  </div> <!-- main -->
+
+</ion-content>

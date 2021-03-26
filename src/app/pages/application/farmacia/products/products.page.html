@@ -1,0 +1,137 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+      <ion-item lines="none" 
+          color="transparent">
+
+          <ion-buttons slot="start">
+            <ion-button routerLink='/app'>
+              <ion-icon
+              class="navIconBtn" 
+              slot="icon-only" 
+              name="chevron-back"></ion-icon>
+            </ion-button>
+
+            <ion-button >
+              <ion-icon 
+                class="navIconBtn" 
+                slot="icon-only" 
+                name=""></ion-icon>
+            </ion-button>
+
+          </ion-buttons>
+
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"> </ion-img>
+        </div>
+
+        <ion-buttons slot="end">
+
+        <ion-button routerLink='/app/farmacia/cart'>
+          <ion-icon
+            [ngClass]="cesta"  
+            class="navIconBtn" 
+            slot="icon-only" 
+            name="cart-outline"></ion-icon>
+        </ion-button>
+
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+
+        </ion-buttons>
+      </ion-item>
+    </div> <!-- navContainer -->
+
+    <div id="cardContent">
+
+      <h2> MEDICAMENTOS </h2>
+
+      <div class="title">
+        <ion-text class="titulo"> Compra de productos </ion-text>
+      </div>
+
+      <ion-text *ngIf="!productItems" color="danger">
+        <h4 > No se encnontraron productos </h4>
+      </ion-text>
+
+      <ion-list *ngIf="productItems" class="list">
+
+        <ion-searchbar placeholder="Buscar producto..." (ionInput)="search( $event.target.value )"></ion-searchbar>
+
+        
+
+        <ion-item class="itm-product" *ngFor="let itm of productItems ">
+  
+          <ion-thumbnail (click)="viewItemDetail( itm )">
+            <img [src]="itm.fileName">
+          </ion-thumbnail>
+      
+          <div class="itm-container">
+      
+            <div class="itm-name" lines="none">
+              <ion-label (click)="viewItemDetail(itm)"> {{ itm.name }} </ion-label> 
+              <ion-icon  (click)="addToCart(itm)" class="cart-icon" name="cart-outline"></ion-icon>
+            </div>
+
+            <div class="itm-price" (click)="viewItemDetail( itm )">
+              <ion-label > {{ itm.description }} </ion-label>
+              <ion-label class="price-label"> $ {{  itm.price.toFixed(2) }} </ion-label>
+            </div>
+
+            <div class="itm-stock" lines="none">
+              <span (click)="viewItemDetail(itm)"> Envío Gratis </span> 
+              <span > Cantidad: {{ itm.stock }} </span>
+            </div>
+    
+          </div>
+
+        </ion-item>
+
+        <!-- FakeItems -->
+
+        <!-- <div *ngFor="let fakeItem of fakeItems || async" class="product-item">
+          <ion-thumbnail class="product-thumb" slot="start">
+            <img [src]="fakeItem.fileName">
+          </ion-thumbnail>
+          <div class="product-dtl">
+            <div class="product-desc">
+              <div style="display: flex;">
+                <ion-label style="float: left;"> {{ fakeItem.name }} </ion-label> 
+                <ion-icon  (click)="addToCart(fakeItem)" class="cart-icon" slot="icon-only" name="cart-outline"></ion-icon>
+              </div>
+              <ion-label class="subBody"> {{ fakeItem.description }} </ion-label> <br>
+            </div> 
+            <div class="produc-prc">
+              <ion-label class="price"> $ {{ fakeItem.price }} </ion-label> <br>
+              <div>
+                <div>
+                  <ion-label class="subBody" style="font-size: 10px"> Envío gratis </ion-label>
+                  <ion-label class="quantity"> Cantidad: 1 </ion-label>
+                </div>
+                <div class="add-icon">
+                  <ion-icon (click)="add_quantity()" name="chevron-up-outline"></ion-icon> <br>
+                  <ion-icon (click)="remove_quantity()" name="chevron-down-outline"></ion-icon>
+                </div> 
+              </div>
+            </div> 
+          </div> 
+        </div>  -->
+
+        <!-- Fake Item-->
+
+
+      </ion-list>
+     
+      
+    </div> <!-- cardContent -->
+  </div> <!-- main -->
+
+</ion-content> 
+
+
+

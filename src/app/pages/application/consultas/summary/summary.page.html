@@ -1,0 +1,118 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+ 
+        <ion-buttons slot="start">
+          <ion-button (click)="toggleMenu()">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only" 
+              name="menu-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          
+          <div id="logo">
+            <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+          </div>
+          
+        <ion-buttons slot="end">
+          <ion-button (click)="End_consultSummary()">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only" 
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+
+
+    <div id="cardContent">
+
+      <h2 class="topTitle ion-text-center"> ¡MUCHAS GRACIAS! </h2>
+      
+      <div class="title">
+        <ion-text class="titulo"> Resumen Servicio  </ion-text>
+      </div>
+ 
+      <div class="order_details">
+
+        <div style="padding-top: 20px;">
+          <ion-label> {{ consultResponse.consultReason }} </ion-label>
+          <ion-label style="float: right;"> $ {{ consultResponse.consultAmount.toFixed(2) }} </ion-label>    
+        </div>
+        <div> <ion-label style="color:#b1b1b1; font-size: 16px;"> Realizado {{ dateTime }} </ion-label> </div>
+        
+        <div style="padding-top: 15px;">
+          <ion-label> Tarifa de Distancia </ion-label>
+          <ion-label style="float: right;"> $ {{ consultResponse.shippingAmount.toFixed(2) }} </ion-label>   
+        </div>
+
+        <div style="padding-top: 15px;"> <ion-label> Método de pago </ion-label>  </div>
+       
+          <ion-item class="slotCard" lines="none"
+            *ngIf="defMethod || async " >
+              
+            <span 
+              class="iconBrand" 
+              [ngClass]="{
+                'Visa': defMethod.brand === 'Visa', 
+                'MasterCard': defMethod.brand === 'MasterCard',
+                'cash': defMethod.brand === 'cash'
+              }"> </span>
+
+            <div class="cardNumber" *ngIf="defMethod.last4"> <span  style="color:#b1b1b1; font-size: 16px;"> **** **** **** {{ defMethod.last4}} </span> </div>
+            <div class="cardNumber" *ngIf="!defMethod.last4" > <span  style="color:#b1b1b1; font-size: 16px;"> Efectivo </span> </div>
+
+
+          </ion-item>
+
+
+        <div class="totals"  style="padding-top: 15px;">
+          <ion-label class="totalFont"> Total </ion-label>
+          <ion-label class="totalPrice"> ${{ consultResponse.amount.toFixed(2) }} </ion-label>   
+        </div>
+
+      </div>
+
+      
+      <ion-text class="calName">Califica a {{ consultResponse.doctor }} </ion-text>
+
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="this.userservice.transformFamilyFilename(consultResponse.filename) || async ">
+        </ion-avatar>
+
+        <ngx-stars [readonly]="false" [size]="1" [initialStars]="2.5" [color]="'#f7b600'"></ngx-stars>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-textarea rows="6" cols="20" placeholder="Deja un comentario..."></ion-textarea>
+      </ion-item>
+
+      <div class="ion-text-center">
+        <a class="clientService" href="mailto:atencionaclientes@tidux.com.mx?Subject=Tidux%20Consultas" target="_top">Servicio a Clientes</a>
+      </div>
+
+
+      <div class="tiduxButton-container">
+				<div class="tx-button blue"  (click)="End_consultSummary()">
+				  <ion-label> Finalizar </ion-label>
+				</div>
+			  </div>
+
+    </div>
+
+
+    
+  </div>
+</ion-content> 

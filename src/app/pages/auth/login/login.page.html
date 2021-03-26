@@ -1,0 +1,68 @@
+
+<ion-content >
+
+    <ion-header class="ion-no-border">
+        <ion-toolbar>
+            <ion-buttons slot="start">
+            <ion-back-button
+                defaultHref="/"
+                text=""
+                color="secondaryTUx"></ion-back-button>
+            </ion-buttons>
+
+        </ion-toolbar> 
+    </ion-header>
+
+    <div class="main ion-padding">
+        
+        <!-- Logo -->
+        <ion-img id="logo_inicio" src="/assets/tidulogoblack.png"></ion-img>
+        
+        <!-- Formulario de registro -->
+        <form autocomplete="off" 
+            [formGroup]="formData"
+            (ngSubmit)="onLogin()">
+             
+            <!-- Correo -->
+            <ion-item class="item">
+                <ion-input placeholder="Correo"
+                    name="email"                    
+                    type="email"
+                    inputmode="email"
+                    formControlName="email" >
+                </ion-input>
+            </ion-item>
+
+            <!-- Contraseña -->
+            <ion-item class="item">
+                <ion-input placeholder="Contraseña"
+                    name="password"                    
+                    type="password"
+                    inputmode="text"
+                    formControlName="password" >
+                </ion-input>
+            </ion-item>
+
+            <!-- Olvide Contraseña -->
+            <ion-item lines="none" class="item">
+                <ion-label slot="end" 
+                    class="fgtPwd" 
+                    routerLink="/forgotpwd" >
+                        ¿Olvidaste tu contraseña? 
+                </ion-label>
+            </ion-item>    
+
+            <!-- [disabled]="loginForm.invalid"  -->
+            <ion-button  class="btnSubmit" 
+                color="secondaryTUx"
+                type="submit"  
+                expand="block"
+                shape="round" > 
+                <ion-text class="btnTxt"> Log In </ion-text> 
+            </ion-button>    
+
+        </form> 
+
+    </div>
+
+</ion-content>

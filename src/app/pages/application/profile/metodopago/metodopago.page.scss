@@ -1,0 +1,117 @@
+// contenido:
+#avatar{
+    width: 50%;
+    height: 150px;
+    width: 150px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 150px;
+    max-height: 150px;
+    margin: auto;
+    position: relative;
+    margin-top: 10px;
+    z-index: 1;
+}
+#avatar ion-avatar{
+    border:3px solid #00b3bc;
+    width: 100%;
+    height: 100%;
+}
+#cardContent{
+    padding:100px 20px 20px 20px ;
+    margin-bottom: 20px;
+    transform: translateY(-75px);
+}
+
+
+#cardContent .list{
+    margin-top: 25px;
+}
+
+
+div#cardContent .Visa{
+    padding-left: 56px;
+    padding-top: 5px;
+    background: url('/assets/visa_pay_m_cardicon_.png') center left no-repeat;
+}
+div#cardContent .MasterCard{
+    padding-left: 56px;
+    padding-top: 5px;
+    background: url('/assets/master_pay_m_cardicon_.png') center left no-repeat;
+}
+div#cardContent .icon-card{
+    padding-left: 25px;
+    padding-bottom: 5px;
+    background: url('/assets/credit-card.svg') center left no-repeat;
+}
+
+.slotCard{
+    border: 1px solid #c2c2c2;
+    margin-bottom: 15px;
+    height: 65px;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: bold;
+    clear: both;
+    padding: 0px 20px 0px 0px;
+    box-shadow: 3px 3px 5px #c1c1c1;
+}
+
+.iconBrand{
+    float: left;
+    height: 100%;
+}
+
+.cardNumber{
+    float: left;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: 20px;
+    padding-top: 16px;
+    letter-spacing: 1px;
+}
+
+.iconRight{
+    height: 100%;
+    float: right;
+}
+
+.default{
+    background-color: #04a5a8;
+    color: #ffffff;
+}
+
+.addMethod{
+    margin-top: 20px;
+    clear: both;
+    height: 120px;
+    width: 100%;
+}
+.creditCard{
+    border: 1px solid #c2c2c2;
+    border-radius: 7px;
+    height: 100%;
+    width: 45%;
+    float: left;
+    text-align: center;
+    box-shadow: 3px 3px 5px #c1c1c1;
+}
+
+.paypal{
+    border: 1px solid #c2c2c2;
+    border-radius: 7px;
+    height: 100%;
+    width: 45%;
+    float: right;
+    box-shadow: 3px 3px 5px #c1c1c1;
+}
+
+.subTitle{
+    font-size: 22px;
+    color: #014c68 ; 
+}
+
+.addMethod ion-text{
+    color: #014c68;
+    font-size: 18px;
+}

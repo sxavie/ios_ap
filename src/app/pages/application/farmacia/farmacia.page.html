@@ -1,0 +1,194 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+      <ion-item lines="none" 
+          color="transparent">
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+        <ion-buttons slot="end">
+
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </div> <!-- navContainer -->
+
+    <div id="cardContent" >
+
+    <!-- <div *ngIf="showSkeleton"> 
+
+      <div class="ion-padding custom-skeleton">
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+        <ion-skeleton-text animated></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      </div>
+    
+      <ion-list>
+        <ion-list-header>
+          <ion-label>
+            <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+          </ion-label>
+        </ion-list-header>
+
+
+
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </h3>
+            <p>
+              <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+            </p>
+            <p>
+              <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-item>
+
+
+
+      </ion-list>
+
+    </div>
+
+    <div *ngIf="!showSkeleton && !noAddresses" class="noavaliable">
+      <h3 style="color: #004d69;"> {{ avaliableData.message }} </h3>
+      
+      <ion-text > Sleccionar otra dirección</ion-text>
+      <div>
+        <ion-text style="color:#04bbbf" (click)="addressPicker()"> {{ addresValidation.name }} 
+
+
+          <ion-icon name="pencil"></ion-icon>
+        </ion-text> 
+
+      </div>
+
+    </div>
+
+    <div *ngIf="noAddresses" class="noavaliable">
+      <h3 style="color: #004d69;"> No tiene direcciones agregadas, agrega una dirección a tu perfil </h3>
+      
+      <ion-text > </ion-text>
+
+      <div>
+        <ion-text style="color:#04bbbf" (click)="addAddress()"> Agregar una dirección 
+          <ion-icon name="pencil"></ion-icon>
+        </ion-text> 
+      </div>
+    </div> -->
+
+
+    <div class="noavaliable">
+
+      <div class="ico-alert">
+        <!-- <ion-icon name="alert-outline"></ion-icon> -->
+        <ion-icon name="alert-circle-outline"></ion-icon>
+      </div>
+
+      <h3 style="color:#004d69; margin: 20px auto;" > Disponible próximamente </h3>
+
+      <div style="width: 90%; margin: 0px auto;">
+        <ion-text> El servicio de farmacia estará disponible muy pronto. 
+        </ion-text> 
+      </div>
+
+    </div>
+
+    </div>
+  </div> <!-- main -->
+
+</ion-content> 
+
+
+
+
+
+
+
+
+
+ 

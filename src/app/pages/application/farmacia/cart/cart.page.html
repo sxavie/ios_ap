@@ -1,0 +1,135 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+
+      <ion-item lines="none" 
+          color="transparent">
+          
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/farmacia"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+
+      </ion-item>
+    </div> <!-- navContainer -->
+
+    <div id="cardContent">
+
+      <div>
+        <h2> MI CARRITO </h2>
+        <ion-icon *ngIf="!isEmptyCart" (click)="emptyAlert()" class="empty-cart" name="trash-outline"></ion-icon>
+      </div>
+
+      
+
+      <div class="title">
+        <ion-text class="titulo"> Continuar compra </ion-text>
+      </div>
+     
+      <div class="noItems ion-text-center" *ngIf="isEmptyCart">
+        <h3> El carrito esta vacio. </h3>
+        <ion-text >
+           Al parecer no se han agregado articulos al carrito, ve a la 
+           <ion-text color="primary" routerLink="/app/farmacia/products"> Farmacia </ion-text>
+           para continuar comprando
+        </ion-text>
+
+        <div class="icn">
+          <ion-icon name="cart-outline"></ion-icon>
+        </div> 
+
+      </div>
+
+      <ion-list >
+
+        <ion-item class="itm-product" *ngFor="let itm of myCarrito ">
+  
+          <ion-thumbnail (click)="viewItemDetail( itm )">
+            <img [src]="itm.fileName">
+          </ion-thumbnail>
+      
+          <div class="itm-container">
+      
+            <div class="itm-name" lines="none">
+              <ion-label (click)="viewItemDetail(itm)"> {{ itm.name }} </ion-label> 
+              <ion-icon  (click)="itemContextual(itm)" class="cart-icon" name="ellipsis-vertical-outline"></ion-icon>
+            </div>
+
+            <div class="itm-price" (click)="viewItemDetail( itm )">
+              <ion-label > {{ itm.description }} </ion-label>
+              <ion-label class="price-label"> $ {{  itm.price.toFixed(2) }} </ion-label>
+            </div>
+
+            <div class="itm-stock" lines="none">
+              <span (click)="viewItemDetail(itm)"> Envío Gratis </span> 
+              <span > Cantidad: {{ itm.quantity }} </span>
+            </div>
+    
+          </div>
+
+        </ion-item>
+        
+      </ion-list>
+
+
+      <hr class="priceDivider" *ngIf="!isEmptyCart">
+
+      <div style="margin: 30px 20px;" *ngIf="!isEmptyCart" >
+
+        <ion-item  class="ticket-item">
+          <ion-icon class="icon-ticket" name="ticket-outline"></ion-icon>  
+          <ion-input (ionBlur)="validarCupon()" [ngClass]="cuponValidationClass" class="cuponTxt" [(ngModel)]="cuponCode" placeholder="Cupón" type="text"></ion-input>
+        </ion-item>
+
+
+        <div style="font-size: 13px;">
+          <ion-text> Productos ({{ itemsQty }}) </ion-text>
+          <ion-text style="float:right"> $ {{itemsTotal.toFixed(2) }} </ion-text>
+        </div>
+
+        <div style="font-size: 13px;">
+          <ion-text style="color: #00b3bc;"> Envío al C.P 20010, monterrey </ion-text>
+          <ion-text style="float:right"> $ {{shiping.toFixed(2)}} </ion-text>
+        </div>
+
+        <div class="totals">
+          <ion-text class="totalTxt"> Total </ion-text>
+          <ion-text class="totalPriceTxt"> $ {{  ordTotal.toFixed(2) }} </ion-text>
+        </div>
+
+
+
+        <div class="buttonAddCard">
+          <div class="ux_button"
+            routerLink="/app/farmacia/cart-checkout">
+            <ion-text > Comprar </ion-text>
+          </div>
+        </div>
+
+      </div>
+
+    </div> <!-- cardContent -->
+  
+  </div> <!-- main -->
+
+</ion-content> 
+
+
+

@@ -1,0 +1,94 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none"  
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-button (click)="toggleMenu()">
+            <ion-icon 
+              class="navIconBtn" 
+              slot="icon-only" 
+              name="menu-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+
+    <div id="logo">
+      <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+    </div>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div 
+            class="dialogBox ion-text-center"
+            (click)="irA('Consultas')">
+            <div class="imgContainer">
+              <ion-img src="/assets/consultas.png"></ion-img>
+            </div>
+            <ion-text  color="primaryTUx">
+              Consultas
+            </ion-text>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div 
+            class="dialogBox ion-text-center"
+            (click)="irA('Resacas')">
+            <div class="imgContainer">
+              <ion-img src="/assets/resacas.png"></ion-img>
+            </div>
+            <ion-text  color="primaryTUx">
+              Resacas
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <div 
+            class="dialogBox ion-text-center" 
+            (click)="irA('Farmaica')">
+            <div class="imgContainer">
+              <ion-img src="/assets/farmacia.png"></ion-img>
+            </div>
+              <ion-text  color="primaryTUx">
+                Farmacia
+            </ion-text>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div 
+          class="dialogBox ion-text-center"
+          (click)="irA('Lab')">
+          <div class="imgContainer">
+            <ion-img src="/assets/laboratorio.png"></ion-img>
+          </div>
+            <ion-text  color="primaryTUx">
+              Laboratorios
+            </ion-text>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      
+      
+    </ion-grid> 
+    
+    
+    <div #homemapa id="homemapa" class="mapa"></div>
+   
+    
+  </div> <!-- main -->
+  
+ 
+</ion-content>

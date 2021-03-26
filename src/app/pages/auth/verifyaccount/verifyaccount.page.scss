@@ -1,0 +1,81 @@
+.layer{
+    font-weight: lighter;
+    //--background: #808080 ; // Replace this with color of your choice  
+    //--background: url('/assets/back_.jpg') ; // 0 0/100% 100% no-repeat;
+    background-image: url('/assets/docTools.jpg');
+    background-repeat: no-repeat;
+    padding: 400px 100px;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+}
+.layer:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+ }
+#logo{
+    margin-top: 4rem;
+    min-width: 280px;
+    max-width: 500px;
+}
+#logo ion-img{
+    padding-bottom: 10px;
+    width: 80%;
+    margin: auto;
+}
+.slogan{
+    color: #ffffff;
+    font-size: 28px;
+}
+.slogan-underline{
+    background-color: #ed6e00;
+    width: 90%;
+}
+
+div#verifyContent{
+    padding: 30px;
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 3rem;
+    height: 50%;
+    max-width: 500px;
+    background-color: #ffffff;
+}
+#container p {
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin: 0;
+}
+#container p.resend{
+    color: #007db5; 
+}
+.input{
+    border:1px solid #c2c2c2;
+    margin-top: 50px;
+}
+#inputVerify{
+    color:#3dc2ff;
+    letter-spacing: 2px;
+}
+.verifyButon{
+    width: 100%;
+    font-size:20px;
+    letter-spacing: 1.5pt;
+    margin: 2.5rem auto;
+}
+.btnTxt{
+    color:#ffffff;
+}

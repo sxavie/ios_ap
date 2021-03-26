@@ -1,0 +1,68 @@
+<ion-menu side="start" menuId="tdxMenu" contentId="outletApp">
+
+	<ion-content class="menuContent" color="bgMenuColor">
+
+		<ion-item lines="none" class="menuAvatar" color="transparent">
+
+
+			<ion-avatar slot="start">
+				<ion-menu-toggle>
+					<img [src]="userService.image" routerLink="/app/perfil">
+				</ion-menu-toggle>
+			</ion-avatar>
+
+
+			<ion-grid>
+
+				<ion-row class="nameRow">
+					<div>
+						<ion-text> {{ userService.usuario?.name }} </ion-text>
+					</div>
+				</ion-row>
+
+				<ion-row>
+					<hr class="name-underline">
+				</ion-row>
+
+				<ngx-stars *ngIf="userService.usuario?.rating_count" [readonly]="true"
+					[initialStars]="userService.usuario?.rating_sum / userService.usuario?.rating_count" color="#f7b600"
+					(ratingOutput)="onRatingSet($event)"></ngx-stars>
+
+			</ion-grid>
+
+		</ion-item>
+
+		<ion-list class="menuList">
+
+			<!-- Si es Obs agregar | async -->
+			<ion-menu-toggle *ngFor="let opt of menuOpts | async">
+
+				<ion-item color="transparent" [routerLink]="opt.redirectTo" detail>
+					<ion-icon [name]="opt.icon" slot="start"></ion-icon>
+					<ion-text class="optTitle">{{ opt.title }}</ion-text>
+				</ion-item>
+
+			</ion-menu-toggle>
+
+			<ion-item color="transparent" (click)="logOut()" detail>
+				<ion-icon name="power-outline" slot="start"></ion-icon>
+				<ion-text class="optTitle">Log Out</ion-text>
+			</ion-item>
+
+		</ion-list>
+
+		<ion-footer class="ion-no-border">
+
+			<div class="privacyLogo" style="z-index: -10;">
+				<img src="/assets/tiduULogo.PNG">
+			</div>
+
+			<hr class="privacy-underline">
+
+			<ion-text> Aviso de Privacidad </ion-text>
+
+		</ion-footer>
+
+	</ion-content>
+
+</ion-menu>

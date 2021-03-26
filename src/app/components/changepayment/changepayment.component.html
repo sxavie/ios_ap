@@ -1,0 +1,71 @@
+<ion-item lines="none">
+  <ion-icon name="close-outline" slot="end"
+      (click)="close()" ></ion-icon>
+</ion-item>
+
+<div id="Content">
+
+      
+  <div class="title ion-text-center">
+    <ion-text class="titulo"> Selecciona un metodo de pago </ion-text>
+  </div>
+  
+  <div class="list"> 
+    
+    <!-- <span ngfor="let card of paymentData.cards" >  {{ card[0] }} </span> -->
+
+    <ng-template [ngIf]="isCards">
+      <div *ngFor="let card of paymentData.cards || async" 
+      class="slotCard"
+      (click)="changeMethod(card)">
+      <!-- [ngClass]="{'default' : card.default_source }" -->
+      <span 
+      class="iconBrand" 
+      [ngClass]="{'Visa': card.brand === 'Visa', 'MasterCard': card.brand === 'MasterCard'}"> </span>
+      <div class="cardNumber"> <span> **** **** **** {{ card.last4}} </span> </div> 
+    </div>
+  </ng-template>
+
+  <ng-template [ngIf]="!isCards">
+
+    <div class="ion-text-center">
+      <ion-text> No hay forma de pago registrada, 
+        <span style="color: #004d69;" (click)="addpay()">
+          agrega 
+        </span>
+        una nueva forma de pago y vuelve aintentarlo </ion-text>
+        
+        <div class="icn">
+          <ion-icon name="card-outline"></ion-icon>
+        </div>
+        
+    </div>
+  </ng-template>
+
+    <!-- Se desactiva seleccion de efectivo -->
+    <!-- <div class="slotCard efectivo" (click)="changeMethod('0')">
+      <span 
+        class="iconBrand" 
+        ngClass="cash"> </span>
+      <div class="cardNumber"> <span> Efectivo </span> </div> 
+    </div> -->
+
+
+       
+
+    <!-- <h4> Agregar métodos de pago </h4>
+    <div class="addMethod">
+      <button routerLink="/app/agregarpago" class="creditCard">
+        <span> Tarjeta de </span>
+        <span> débito/crédito</span>
+      </button>
+      <button class="paypal">
+        <span> Efectivo </span>
+      </button>
+    </div> -->
+
+
+  </div>
+
+
+</div>

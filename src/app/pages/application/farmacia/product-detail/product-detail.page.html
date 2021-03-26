@@ -1,0 +1,118 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+      <ion-item lines="none" 
+          color="transparent">
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/farmacia"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+        <ion-buttons slot="end">
+
+          <ion-button routerLink='/app/farmacia/cart'>
+            <ion-icon
+              [ngClass]="cesta"  
+              class="navIconBtn" 
+              slot="icon-only" 
+              name="cart-outline"></ion-icon>
+          </ion-button>
+
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </div> <!-- navContainer -->
+
+    <div id="cardContent">
+
+      <h2> MEDICAMENTOS </h2>
+
+      <div class="title">
+        <ion-text class="titulo"> Compra de prodctos </ion-text>
+      </div>
+
+      <div style="padding: 20px;">
+
+        <!-- <ion-text style="color:grey; font-size: 12px; padding-left: 20px;"> 247 Vendidos </ion-text> <br> -->
+        <ion-text class="item-name">
+          {{ medicamento.description || async }}
+        </ion-text>
+
+        <ion-img [src]="medicamento.fileName || async "></ion-img>
+
+        <div>
+
+          <div class="totals">
+            <ion-text style="color: #00b3bc;"> Total </ion-text>
+            <ion-text style="float:right;"> ${{ medicamento.price  || async }} </ion-text>
+          </div>
+          <div style="float: right; margin-bottom: 30px;">
+            <span class="ivaLabel"> IVA incluido</span>
+          </div>
+
+
+          <div style="margin-top: 30px;">
+            <ion-icon style="color:#00b3bc" name="cart-outline"></ion-icon>
+            <ion-text style="font-size: 9px;"> Llega entre hoy y manana a su domicilio </ion-text>
+          </div>
+
+          <div style="margin: 10px 0">
+            <ion-icon style="color:#00b3bc" name="person-outline"></ion-icon>
+            <ion-text style="font-size: 9px;"> Proveedor: <span style="color:#00b3bc">{{ medicamento.provider  || async }} </span> </ion-text>
+          </div>
+
+          <div style="font-size: 14px;">
+            <ion-text style="color:grey;" > Disponibles</ion-text>
+            <ion-item style="margin-left: -20px;">
+              <ion-label>Cantidad:</ion-label>
+              <ion-select [(ngModel)]="quantity" [value]="quantity"class="custom-options" interface="popover">
+                <ion-select-option value="0">0</ion-select-option>
+                <ion-select-option value="1">1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+                <ion-select-option value="15">15</ion-select-option>
+                <ion-select-option value="25">25</ion-select-option>
+                <ion-select-option value="35">35</ion-select-option>
+              </ion-select>
+              <ion-label style="color: grey;"> ({{  medicamento.stock || async }}) </ion-label>
+            </ion-item>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="buttonAddCard">
+        <div class="ux_button"
+          (click)="addToCart(true)">
+          <ion-text > Comprar </ion-text>
+        </div>
+      </div>
+      <div class="buttonAddCard">
+        <div class="ux_button_outline"
+          (click)="addToCart(false)">
+          <ion-text > Carrito </ion-text>
+        </div>
+      </div>
+
+      
+    </div> <!-- cardContent -->
+  </div> <!-- main -->
+
+</ion-content>  
+
+
+

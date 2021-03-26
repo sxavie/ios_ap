@@ -1,0 +1,98 @@
+<ion-content id="container"
+	no-scroll
+	padding>
+
+	<div class="main">
+
+		<div class="navContainer">
+
+			<ion-item lines="none"
+				color="transparent">
+
+				<ion-buttons slot="start">
+					<ion-back-button defaultHref="/app/familiares"
+						text=""
+						class="navIconBtn">
+					</ion-back-button>
+				</ion-buttons>
+
+				<div id="logo">
+					<ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+				</div>
+
+				<ion-buttons slot="end">
+					<ion-button routerLink="/app">
+						<ion-icon class="navIconBtn"
+							slot="icon-only"
+							name="home-outline"></ion-icon>
+					</ion-button>
+				</ion-buttons>
+
+			</ion-item>
+
+		</div> <!-- navButtons -->
+
+		<div id="avatar">
+			<ion-avatar>
+				<img [src]="userservice.image">
+			</ion-avatar>
+		</div>
+
+
+		<div id="cardContent">
+
+			<div class="title">
+				<ion-text class="titulo"> {{ familiar?.name }} </ion-text>
+			</div>
+
+			<ion-list class="list">
+
+
+				<ng-template [ngIf]="familiar">
+					<ion-item lines="none">
+
+						<ion-avatar slot="start">
+							<img [src]="userservice.transformFamilyFilename(userservice.userView?.filename)">
+						</ion-avatar>
+						<ion-label>
+							<h3> {{ familiar?.name }} </h3>
+							<p> {{familiar?.relationship}} </p>
+						</ion-label>
+					</ion-item>
+
+				</ng-template>
+
+				<ion-item routerLink="/app/familiares/famdata">
+					<span class="iconDatos">
+						<ion-label> Datos generales </ion-label>
+					</span>
+				</ion-item>
+
+				<ion-item routerLink="/app/familiares/famalergias">
+					<span class="iconAlergias">
+						<ion-label> Alergias </ion-label>
+					</span>
+				</ion-item>
+
+				<ion-item routerLink="/app/familiares/famhistory">
+					<span class="iconHistorial">
+						<ion-label> Historial médico </ion-label>
+					</span>
+				</ion-item>
+
+			</ion-list>
+
+			<!-- Testing Area -->
+
+			<!-- <input  [(ngModel)]="photo" type="file"> -->
+			<!-- <ion-button (click)="getPhoto()"> subir Photo </ion-button>  -->
+
+			<!-- Testing Area -->
+
+		</div>
+
+
+
+
+	</div>
+</ion-content>

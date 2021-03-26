@@ -1,0 +1,31 @@
+<div class="navContainer">
+
+  <ion-item lines="none" color="transparent">
+
+      <ion-buttons slot="start">
+        <ion-back-button
+        defaultHref="/app"
+        text=""
+        class="navIconBtn">
+      </ion-back-button>
+    </ion-buttons>
+
+    
+    <div id="logo">
+      <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+    </div>
+      
+    <ng-template [ngIf]="home">
+      <ion-buttons slot="end">
+        <ion-button routerLink="/app">
+          <ion-icon 
+            class="navIconBtn"
+            slot="icon-only"
+            name="home-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ng-template>
+    
+  </ion-item>
+
+</div>

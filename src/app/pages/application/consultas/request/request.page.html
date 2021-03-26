@@ -1,0 +1,154 @@
+<ion-content id="container"
+  no-scroll
+  padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+
+      <ion-item lines="none"
+        color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/app/consultas"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon class="navIconBtn"
+              slot="icon-only"
+              name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+
+      </ion-item>
+
+    </div> <!-- navButtons -->
+
+    <div id="cardContent" class="fit-card-content">
+
+      <h2 [ngSwitch]="orderservice.newConsultData?.consultReason">
+        <span *ngSwitchCase="1"> Consulta general </span>
+        <span *ngSwitchCase="2"> Aplicación de medicamento </span>
+        <span *ngSwitchCase="3"> Retiro de puntos </span>
+        <span *ngSwitchCase="4"> Heridas / curaciones </span>
+        <span *ngSwitchCase="5"> Resacas </span>
+        <span *ngSwitchDefault> CONSULTAS </span>
+      </h2>
+
+      <!-- content -->
+      <div *ngIf="showSwitch">
+
+        <div id="switch">
+          <div id="select-button">
+
+          </div>
+          <div class="buttons"
+            (click)="connection('presencial')">
+
+            <p id="conectado">Virtual</p>
+          </div>
+          <div class="buttons"
+            (click)="connection('virtual')">
+
+            <p id="desconectado">Presencial</p>
+          </div>
+        </div>
+
+      </div>
+
+      <ng-template [ngIf]="!isVirtual">
+
+        <ion-item class="addres-selector">
+          <ion-label>Dirección</ion-label>
+          <ion-select ok-text="OK"
+            cancel-text="Cancelar"
+            [(ngModel)]="selAddress"
+            (ionChange)="selectedAddress()">
+            <ion-select-option value="pinMap">Pin en el mapa</ion-select-option>
+            <ion-select-option *ngFor="let addres of AddrList || async"
+              [value]="addres._id"> {{ addres.name }} </ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- <input id="googleAuto"> -->
+        <div class="map">
+          <!-- <app-map *ngIf="(coordinates$|async) as coords" [coords]="coords" ></app-map> -->
+          <div #mapa
+            id="mapa"
+            class="mapa"></div>
+        </div>
+
+      </ng-template>
+
+      <ion-item></ion-item>
+
+      <ion-item detail>
+        <ion-icon class="icon-ticket"
+          name="ticket-outline"></ion-icon>
+
+        <ion-input (ionBlur)="validarCupon()"
+          [ngClass]="cuponValidationClass"
+          class="cuponTxt"
+          [(ngModel)]="cuponCode"
+          placeholder="Cupón"
+          type="text"></ion-input>
+        <!-- <ion-text class="cuponVerificartxt ion-text-right" 
+          (click)="validarCupon()"> Verificar </ion-text> -->
+      </ion-item>
+
+      <ion-item (click)="reqOrderNow(true)"
+        detail>
+        <span class="icon-calendar"> </span>
+        <ion-text> Agendar </ion-text>
+      </ion-item>
+
+      <ion-item *ngIf="!isVirtual"
+        class="slotCard"
+        detail
+        [ngClass]="{'default' : userservice.defaultMethod.default_source }"
+        (click)="changeMethod()">
+
+
+        <span class="iconBrand"
+          [ngClass]="{
+                'Visa': userservice.defaultMethod.brand === 'Visa', 
+                'MasterCard': userservice.defaultMethod.brand === 'MasterCard'
+              }"> </span>
+        <!-- ,'cash': userservice.defaultMethod.brand === 'cash' -->
+
+        <div class="cardNumber"
+          *ngIf="userservice.defaultMethod.last4"> <span> **** **** **** {{ userservice.defaultMethod.last4}} </span> </div>
+        <!-- <div class="cardNumber" *ngIf="!userservice.defaultMethod.last4" > <span> Efectivo </span> </div> -->
+
+        <div class="cardNumber"
+          *ngIf="!userservice.defaultMethod.last4">
+          <!-- <ion-icon class="icon-ticket" name="card-outline"> </ion-icon> -->
+          <span> Metodo de pago </span>
+        </div>
+
+        <!-- <span class="iconRight" slot="end" (click)="changeMethod()"> CAMBIAR </span> -->
+
+      </ion-item>
+
+
+      <!-- Boton reutilizado css Global -->
+      <div class="tiduxButton-container">
+        <div class="tx-button orange" (click)="reqOrderNow(false)">
+          <ion-label> Solicitar Ahora </ion-label>
+        </div>
+      </div>
+
+      <!-- content -->
+
+    </div>
+
+  </div>
+</ion-content>

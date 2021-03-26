@@ -1,0 +1,117 @@
+<ion-content id="container"
+	no-scroll
+	padding>
+
+	<div class="main">
+
+		<div class="navContainer">
+
+			<ion-item lines="none"
+				color="transparent">
+
+				<ion-buttons>
+					<ion-icon class="navIconBtn"
+						slot="icon-only"
+						name=""></ion-icon>
+				</ion-buttons>
+
+				<div id="logo">
+					<ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+				</div>
+
+				<ion-buttons slot="end">
+					<ion-button routerLink="/app">
+						<ion-icon class="navIconBtn"
+							slot="icon-only"
+							name="home-outline"></ion-icon>
+					</ion-button>
+				</ion-buttons>
+
+			</ion-item>
+		</div> <!-- navButtons -->
+
+		<div id="avatar">
+			<ion-avatar>
+				<!-- <img [src]="imgAvatar"> -->
+				<img [src]="avatarImage">
+			</ion-avatar>
+		</div>
+
+		<span style="display: none;"
+			class="iconPhone"
+			(click)="calling()"> </span>
+		<span class="iconMessage"
+			(click)="chating()"> </span>
+
+		<div id="cardContent">
+
+			<div class="title">
+				<ion-text class="titulo"> {{orderResp.doctor}} </ion-text>
+			</div>
+			<img style="padding-left: 20px;"
+				class="rating"
+				src="/assets/Rating.svg">
+
+			<div class="order_details">
+
+				<div> {{orderResp.medicalLicense}} </div>
+				<div> Médico General </div>
+				<div>
+					<ion-label> Total estimado </ion-label>
+					<ion-label style="float: right;"> $ {{ orderResp.amount?.toFixed(2) }} </ion-label>
+				</div>
+
+				<div class="arriving_time"
+					*ngIf="!cancellable">
+					<ion-label> Tu médico está en ruta </ion-label>
+					<ion-label style="float: right; padding-left: 5px;"> {{ orderResp.time }} </ion-label>
+					<ion-icon style="float: right; margin-top: 1px; color: #00b3bc;"
+						slot="icon-only"
+						name="time-outline"></ion-icon>
+				</div>
+
+				<div class="arriving_time"
+					*ngIf="cancellable">
+					<ion-label> Tu médico ha llegado </ion-label>
+				</div>
+
+			</div>
+
+			<div id="map"
+				class="map">
+
+				<!-- <ion-searchbar id="searchBar" placeholder="pa´ onde?" [debounce]="250"></ion-searchbar> -->
+
+			</div>
+
+
+			<ion-item *ngIf="cancellable">
+				<ion-icon name="information-circle-outline"
+					color="primary"
+					slot="start"></ion-icon>
+				<ion-text
+					color="primary">Tu consulta esta en proceso, no es posible cancelar.</ion-text>
+			</ion-item>
+
+
+			<!-- <ion-button (click)="orderCancell_walert()"
+				class="cancelBtn"
+				color="secondaryTUx"
+				expand="block"
+				shape="round"
+				size="large"
+				[disabled]="cancellable">
+				<ion-text class="btnTxt"> Cancelar </ion-text>
+			</ion-button> -->
+
+			<!-- Boton reutilizado css Global -->
+			<div *ngIf="!cancellable" class="tiduxButton-container">
+				<div class="tx-button blue"  (click)="orderCancell_walert()" [disabled]="cancellable">
+				  <ion-label> Cancelar </ion-label>
+				</div>
+			  </div>
+
+		</div>
+
+	</div>
+</ion-content>

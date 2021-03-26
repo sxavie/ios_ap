@@ -1,0 +1,83 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/perfil"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+          
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+
+    <div id="avatar">
+      <ion-avatar>
+          <img [src]="imgAvatar || async ">
+      </ion-avatar>
+    </div>
+
+    
+    <div id="cardContent">
+      
+      <div class="title">
+        <ion-text class="titulo"> Métodos de Pago </ion-text>
+      </div>
+      
+      <div class="list"> 
+
+        <div *ngFor="let card of cards" 
+          class="slotCard"
+          [ngClass]="{'default' : card.default_source } || async"
+          (click)="presentActionSheet(card)">
+          
+          <span 
+            class="iconBrand" 
+            [ngClass]="{'Visa': card.brand === 'Visa', 'MasterCard': card.brand === 'MasterCard'} || async"> </span>
+
+          <div class="cardNumber"> <span> **** **** **** {{card.last4}} </span> </div>
+        
+        </div>
+
+        <ion-text class="subTitle"> Agregar métodos de pago </ion-text>
+
+        <div class="addMethod">
+
+          <button routerLink="/app/agregarpago" class="creditCard">
+            <ion-text><span class="icon-card"></span> </ion-text> <br> <br>
+            <ion-text > Tarjeta de </ion-text>
+            <ion-text > débito/crédito</ion-text>
+          </button>
+        </div>
+
+
+      </div>
+
+
+    </div>
+    
+  </div>
+</ion-content> 

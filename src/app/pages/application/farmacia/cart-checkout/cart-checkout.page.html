@@ -1,0 +1,185 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+      <ion-item lines="none" 
+          color="transparent">
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/farmacia"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </div> <!-- navContainer -->
+
+
+    <div id="cardContent">
+
+      <div>
+        <h2> CHECKOUT </h2>
+      </div>
+
+      <div class="title">
+        <ion-text class="titulo"> Resumen de compra </ion-text>
+      </div>
+
+      <ion-list style="margin-top: 15px;" class="main-addres-list" >
+        <ion-text class="listSubTitle"> DIRECCIÓN DE ENVÍO </ion-text>  
+
+
+        <div *ngIf="defaulAddres || async as address">
+
+          <div style="display: flex;">
+
+            <div class="main-addresContainer">
+              <div style="font-weight: bold;"> {{ address.name }} </div>
+              <div> {{address.street}}, No. {{address.number}} </div>
+              <div> Col. {{address.neighborhood}}, </div>
+              <div> {{address.city}}, {{address.state}}, {{address.country}} </div>
+              <div> CP. {{address.zipcode}} </div>
+            </div>
+
+            <div class="main-iconContainer">
+                <!-- <ion-icon name="chevron-forward"></ion-icon> -->
+            </div>
+            
+          </div>
+      
+        </div>
+
+        <!-- <div *ngIf="!defaulAddres || async ">
+
+          <div style="display: flex;" routerLink="/app/farmacia/addresses">
+
+            <div class="main-addresContainer">
+              <div style="font-weight: bold; padding: 0px 15px; color: #04bbbf;"> Seleccionar dirección </div>
+            </div>
+            
+            <div class="main-iconContainer">
+              <ion-icon name="chevron-forward"></ion-icon>
+          </div>
+
+          </div>
+
+        </div> -->
+      
+        <div class="address_divider_"> <hr> </div>
+        
+      
+      </ion-list>
+
+
+      <ion-list>
+        <ion-text class="listSubTitle"> METODO DE PAGO </ion-text>  
+
+        <ng-template [ngIf]="userservice.defaultMethod || async" >
+
+          <ion-item 
+          [ngClass]="{'default' : userservice.defaultMethod.default_source }"
+          class="slotCard" (click)="changeMethod()"
+          >
+          
+            <span 
+            class="iconBrand" 
+            [ngClass]="{
+              'Visa': userservice.defaultMethod.brand === 'Visa', 
+              'MasterCard': userservice.defaultMethod.brand === 'MasterCard',
+              'cash': userservice.defaultMethod.brand === 'cash'
+            }"> </span>
+            
+            <div class="cardNumber" *ngIf="userservice.defaultMethod.last4"> <span> **** **** **** {{ userservice.defaultMethod.last4}} </span> </div>
+            <div class="cardNumber" *ngIf="!userservice.defaultMethod.last4" > <span> Efectivo </span> </div>
+          
+          </ion-item>
+          
+        </ng-template>
+
+      </ion-list>
+
+
+      <ion-list class="list" >
+        <ion-text class="listSubTitle"> ARTICULOS </ion-text>   
+
+        <div *ngFor="let item of myCarrito || async " class="product-item" lines="none">
+
+          <ion-thumbnail class="product-thumb" slot="start">
+            <img [src]="item.fileName">
+          </ion-thumbnail>
+        
+          <div class="product-dtl">
+            <div class="product-desc">
+              <div style="display: flex;">
+                <ion-label style="float: left;"> {{ item.name }} </ion-label> 
+              </div>
+              <ion-label class="subBody"> {{ item.description }} </ion-label> <br>
+            </div> 
+
+            <div class="produc-prc">
+              <ion-label class="price"> $ {{ item.price.toFixed(2) || async }} </ion-label> <br>
+              <div>
+                <div>
+                  <ion-label class="subBody"> Envío gratis </ion-label>
+                  <ion-label class="quantity"> Cantidad: {{ item.quantity || async }} </ion-label>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <br>
+        </div> 
+
+      </ion-list>
+
+
+      <hr class="priceDivider">
+
+      <div style="margin: 30px 20px;" >
+
+        <div style="font-size: 13px;">
+          <ion-text > Productos ({{ itemsQty }}) </ion-text>
+          <ion-text style="float:right"> $ {{itemsTotal.toFixed(2)}} </ion-text>
+        </div>
+
+        
+        <div style="font-size: 13px;" *ngIf="defaulAddres || async as address">
+          <ion-text style="color: #00b3bc;"> Envío al CP {{address.zipcode}} , {{address.city}} </ion-text>
+          <ion-text style="float:right"> $ {{ shiping.toFixed(2) }} </ion-text>
+        </div>
+
+        <div class="totals">
+          <ion-text class="totalTxt"> Total </ion-text>
+          <ion-text class="totalPriceTxt"> $ {{ ordTotal.toFixed(2) }} </ion-text>
+        </div>
+
+
+        <div class="buttonAddCard">
+          <div class="ux_button"
+            (click)="buttonCheckout()">
+            <ion-text > Comprar </ion-text>
+          </div>
+        </div>
+
+      </div>
+
+    </div> <!-- cardContent -->
+     
+      
+
+  </div> <!-- main -->
+
+</ion-content> 
+
+
+

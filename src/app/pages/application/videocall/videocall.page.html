@@ -1,0 +1,76 @@
+<ion-content [scrollEvents]="true"
+    fullscreen
+    (ionScroll)="refreshVideos()">
+
+
+    <ion-item color="transparent"
+        class="navOverlay"
+        lines="none">
+        <ion-buttons slot="start">
+            <ion-back-button color="light"
+                defaultHref="/app/home"
+                icon="chevron-back-outline">
+            </ion-back-button>
+        </ion-buttons>
+    </ion-item>
+
+
+    <div class="main-container">
+
+        <div class="callcontainer flex-center">
+
+            <ov-video [streamManager]="sub"
+                *ngFor="let sub of subscribers"></ov-video>
+
+            <ion-img *ngIf="!subscribers.length"
+                class="call-loader"
+                src="/assets/tidulogowhite_s.png"></ion-img>
+
+            <ion-grid style="position: absolute; top: 0; right: 0;">
+                <ion-row class="ion-justify-content-end">
+                    <ion-col size="5">
+                        <ov-video *ngIf="publisher"
+                            [streamManager]="publisher"></ov-video>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <div class="call-frame">
+
+            </div>
+        </div>
+
+
+        <ion-grid class="call-buttons ion-padding">
+            <ion-row class="ion-justify-content-center ion-text-center">
+                <ion-col></ion-col>
+                <ion-col>
+                    <ion-button size="large"
+                        color="primary">
+                        <ion-icon slot="icon-only"
+                            name="videocam-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+
+                <ion-col>
+                    <ion-button size="large"
+                        color="primary">
+                        <ion-icon slot="icon-only"
+                            name="mic-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+
+                <ion-col>
+                    <ion-button size="large"
+                        color="danger"
+                        (click)="leaveSession()">
+                        <ion-icon slot="icon-only"
+                            name="call-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col></ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+
+</ion-content>

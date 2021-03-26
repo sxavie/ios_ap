@@ -1,0 +1,64 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+    <div class="navContainer">
+      <ion-item lines="none" color="transparent">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/app" text="" class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon class="navIconBtn" slot="icon-only" name="home-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </div> <!-- navContainer -->
+
+    <div id="cardContent">
+
+      <div>
+        <h2> LABORATORIOS </h2>
+      </div>
+
+     
+
+
+        <div class="template-container">
+
+          <div class="list">
+
+            <div *ngFor=" let lab of labsList || async" #cardHtmlCont (click)="setLab(cardHtmlCont, lab._id)"
+              class="slotCard">
+
+              <div class="labImgContainer">
+                <img [src]="apiUrl_img + lab.fileName">
+              </div>
+
+              <div class="labName">
+                <span>
+                  {{ lab.name }}
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="tiduxButton-container">
+            <div class="tx-button blue" (click)="next()">
+              <ion-label> Continuar </ion-label>
+              <div></div>
+            </div>
+          </div>
+
+        </div>
+
+    </div> <!-- cardContent -->
+
+  </div> <!-- main -->
+
+</ion-content>

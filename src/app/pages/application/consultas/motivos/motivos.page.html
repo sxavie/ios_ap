@@ -1,0 +1,123 @@
+<ion-content id="container" no-scroll padding>
+
+  <div class="main">
+
+    <div class="navContainer">
+      
+      <ion-item 
+          lines="none" 
+          color="transparent">
+
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/app/consultas"
+            text=""
+            class="navIconBtn">
+          </ion-back-button>
+        </ion-buttons>
+        
+        <div id="logo">
+          <ion-img src="/assets/tidulogowhite_s.png"></ion-img>
+        </div>
+          
+        <ion-buttons slot="end">
+          <ion-button routerLink="/app">
+            <ion-icon 
+              class="navIconBtn"
+              slot="icon-only"
+              name="home-outline" ></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        
+      </ion-item>
+
+    </div> <!-- navButtons -->
+    
+    <div id="cardContent" class="fit-card-content">
+
+      <h2 [ngSwitch]="orderservice.newConsultData?.consultReason">
+        <span *ngSwitchCase="1"> Consulta general </span>
+        <span *ngSwitchCase="2"> Aplicación de medicamento </span>
+        <span *ngSwitchCase="3"> Retiro de puntos </span>
+        <span *ngSwitchCase="4"> Heridas / curaciones </span>
+        <span *ngSwitchCase="5"> Resacas </span>
+        <span *ngSwitchDefault> CONSULTAS </span>
+      </h2>
+      
+      <div class="title">
+        <ion-text class="titulo"> Motivo de consulta </ion-text>
+      </div>
+
+      <!-- content -->
+      <div class="list">
+
+        <ion-item>
+          <ion-text> Dolor abdominal </ion-text>
+          <ion-checkbox value="Dolor abdominal"
+              slot="end"  (click)="addMotivo(  $event.target.value )"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-text> Dolor de cabeza </ion-text>
+          <ion-checkbox value="Dolor de cabeza"
+              slot="end" (click)="addMotivo(  $event.target.value )">
+          </ion-checkbox>
+
+        </ion-item>
+ 
+        <ion-item>
+          <ion-text> Dolor de garganta </ion-text>
+          <ion-checkbox value="Dolor de Garganta"
+              slot="end" (click)="addMotivo(  $event.target.value )"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-text> Fiebre </ion-text>
+          <ion-checkbox value="Fiebre"
+              slot="end" (click)="addMotivo(  $event.target.value )"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-text> Diarrea </ion-text>
+          <ion-checkbox value="Diarrea"
+              slot="end" (click)="addMotivo(  $event.target.value )"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-text> Náuseas / vómito </ion-text>
+          <ion-checkbox value="Nauseas/Vomito"
+              slot="end" (click)="addMotivo(  $event.target.value )"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-text> Tos </ion-text>
+          <ion-checkbox value="Tos"
+              slot="end" (click)="addMotivo(  $event.target.value )"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-text> Dificultad para respirar </ion-text>
+          <ion-checkbox value="Dificultad para respirar"
+              slot="end" (click)="addMotivo(  $event.target.value )"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-text> Otras </ion-text>
+          <ion-checkbox value="Otras"
+              slot="end" (click)="addMotivo(  $event.target.value )"></ion-checkbox>
+        </ion-item>
+ 
+
+      </div>
+
+
+      <!-- Boton reutilizado css Global -->
+      <div class="tiduxButton-container">
+        <div class="tx-button blue" (click)="reqNewOrder()">
+          <ion-label> Siguiente </ion-label>
+        </div>
+      </div>
+
+      <!-- content -->
+      
+    </div>
+    
+  </div>
+</ion-content> 
+
+
+

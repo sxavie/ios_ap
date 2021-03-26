@@ -1,0 +1,57 @@
+<div class="form-container">
+
+  <form [formGroup]="paymentMethodFrm" (ngSubmit)="saveRequest()">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="controlErrors">
+            <ion-label *ngIf="cardControlErrors">
+              {{cardControlErrors.errorMessage}}
+            </ion-label>
+          </div> 
+          <div class="field">
+            <ion-input formControlName="cardNumber" type="text" inputmode="numeric" (ionChange)="numberGropuSeparator()"
+              placeholder="XXXX-XXXX-XXXX-XXXX"></ion-input>
+              <ion-icon name="card"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="controlErrors">
+            <ion-label *ngIf="dateControlErrors">
+              {{dateControlErrors.errorMessage}}
+            </ion-label>
+          </div>
+          <div class="field centered">
+            <ion-input formControlName="expiresDate" type="text" inputmode="numeric" max="5" maxlength="5" (ionChange)="expiresDateSeparator()"
+              placeholder="00/00"></ion-input>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="controlErrors">
+            <ion-label *ngIf="codeControlErrors">
+              {{codeControlErrors.errorMessage}}
+            </ion-label>
+          </div>
+          <div class="field centered">
+            <ion-input formControlName="securityCode" type="text" inputmode="numeric" (ionChange)="securityCodeViewValidator()"
+              placeholder="CVV"></ion-input>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </form>
+
+
+  <div class="add-button">
+
+    <div class="tx-button blue" (click)="processRequest()">
+      <ion-label> AGREGAR </ion-label>
+      <div></div>
+    </div>
+
+  </div>
+
+</div>
